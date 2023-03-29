@@ -1,8 +1,8 @@
 
 body {
     font-family: 'Raleway', sans-serif;
-    margin: 10px 10px;
-    padding: 2px;
+    margin: 0px 0px;
+    padding: 0px;
     overflow-x: hidden;
 }
 
@@ -187,6 +187,8 @@ header {
     /*outline: 2px solid red;*/
     height: 80vh;
     overflow: hidden;
+    width: 100vw;
+
 }
 .slideshow-container {
     position: relative;
@@ -401,7 +403,7 @@ footer a {
 @media only screen and (max-width: 1024px) {
     body {
         /*outline: 2px solid red;*/
-        margin: 10px;
+        margin: 0px;
     }
     header {
         font-size: 12px;

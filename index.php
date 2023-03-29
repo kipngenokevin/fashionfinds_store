@@ -240,41 +240,44 @@
         </nav>
     </header>
 
+    <!-- Slider Element -->
+    <div class ="slideshow">
+
+        <div class="slideshow-container">
+            <div class="slide">
+                <img src="img/img1.jpg" alt="Slide 1">
+                <div class="slide-text">
+                    <h2>Payment Made Easy</h2>
+                    <p>Purchase our products from the comfort of your home</p>
+                    <button class="slide-button">Buy Now</button>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="img/img2.jpg" alt="Slide 2">
+                <div class="slide-text">
+                    <h2>High Quality</h2>
+                    <p>Exceptional, stylish and affordable</p>
+                    <button class="slide-button">Buy Now</button>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="img/slide3.jpg" alt="Slide 3">
+                <div class="slide-text">
+                    <h2>Discounted Prices</h2>
+                    <p>Find your favorites at a considerably affordable prices</p>
+                    <button class="slide-button">Buy Now</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
     <!-- BODY ELEMENT -->
 
     <div class="body-element">
 
         <!-- LIVE SLIDESHOW ELEMENT-->
-        <div class ="slideshow">
-
-            <div class="slideshow-container">
-                <div class="slide">
-                    <img src="img/img1.jpg" alt="Slide 1">
-                    <div class="slide-text">
-                        <h2>Payment Made Easy</h2>
-                        <p>Purchase our products from the comfort of your home</p>
-                        <button class="slide-button">Buy Now</button>
-                    </div>
-                </div>
-                <div class="slide">
-                    <img src="img/img2.jpg" alt="Slide 2">
-                    <div class="slide-text">
-                        <h2>High Quality</h2>
-                        <p>Exceptional, stylish and affordable</p>
-                        <button class="slide-button">Buy Now</button>
-                    </div>
-                </div>
-                <div class="slide">
-                    <img src="img/slide3.jpg" alt="Slide 3">
-                    <div class="slide-text">
-                        <h2>Discounted Prices</h2>
-                        <p>Find your favorites at a considerably affordable prices</p>
-                        <button class="slide-button">Buy Now</button>
-                    </div>
-                </div>
-            </div>
-
-        </div>
+       
 
         <div class="body-section">
 
@@ -395,51 +398,51 @@
 
     <!-- FOOTER ELEMENT -->
     <footer>
-                <div class="navigate">
-                    <h3>Navigate</h3>
-                    <a href="">Payment</a>
-                    <a href="">Pages</a>
-                    <a href="">Contact Us</a>
-                </div>
+        <div class="navigate">
+            <h3>Navigate</h3>
+            <a href="">Payment</a>
+            <a href="">Pages</a>
+            <a href="">Contact Us</a>
+        </div>
 
-                <div class="categories">
-                    <h3>Categories</h3>
-                    <a href="">Bags</a>
-                    <a href="">Jewelry</a>
-                    <a href="">Shoes</a>
-                    <a href="">Watches</a>  
-                </div>
+        <div class="categories">
+            <h3>Categories</h3>
+            <a href="">Bags</a>
+            <a href="">Jewelry</a>
+            <a href="">Shoes</a>
+            <a href="">Watches</a>  
+        </div>
 
-                <div class="popular-brands">
-                    <a href="">Chanel</a>
-                    <a href="">Valentino</a>
-                    <a href="">Christian Dior</a>
-                    <a href="">Cartier</a>
-                    <a href="">Longines</a>
-                    <a href="">Hermes</a>
-                    <a href="">Prada</a>
-                    <a href="">Bvlgari</a>
-                    <a href="">Rolex</a>            
+        <div class="popular-brands">
+            <a href="">Chanel</a>
+            <a href="">Valentino</a>
+            <a href="">Christian Dior</a>
+            <a href="">Cartier</a>
+            <a href="">Longines</a>
+            <a href="">Hermes</a>
+            <a href="">Prada</a>
+            <a href="">Bvlgari</a>
+            <a href="">Rolex</a>            
 
-                </div>
-                <div class="info">
-                    <span><i>Paris, France</i></span>
-                    
+        </div>
+        <div class="info">
+            <span><i>Paris, France</i></span>
+            
 
-                </div>
-                <div class="subscribe">
-                    <span>Subscribe To Our Newsletter</span>
-                    <span>Get the latest updates on new products and upcoming sales</span>
-                    <div class="subscribe-email">
-                        <input id="email-address" type="email" />
-                        <button class="slide-button">Subscribe</button>
+        </div>
+        <div class="subscribe">
+            <span>Subscribe To Our Newsletter</span>
+            <span>Get the latest updates on new products and upcoming sales</span>
+            <div class="subscribe-email">
+                <input id="email-address" type="email" />
+                <button class="slide-button">Subscribe</button>
 
-                    </div>
-                    
+            </div>
+            
 
-                </div>
+        </div>
 
-            </footer>
+    </footer>
 
 
 
