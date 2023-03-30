@@ -144,12 +144,14 @@ header {
 .dropdown:hover .dropdown-content {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
     padding: 12px;
 }
 .nav-drop {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    outline: 2px solid red;
 }
 
 .child_categories {

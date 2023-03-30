@@ -1,3 +1,31 @@
+<?php
+// Include the database connector
+require_once('database/db.php');
+
+// Write your SQL query
+$query = 'SELECT  Brand_Name, Grandchild_Category  FROM products WHERE Root_Category="Bags" GROUP BY Brand_Name';
+$query1 = '';
+
+//$query = 'SELECT DISTINCT Brand_Name FROM products WHERE Root_Category = "Bags"';
+$query2 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Root_Category = "Bags" GROUP BY Grandchild_Category';
+$query3 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Yves Saint Laurent"';
+
+
+// Execute the query against the database
+$result = $mysqli->query($query);
+$result2 = $mysqli->query($query2);
+$result3 = $mysqli->query($query3);
+echo $query2;
+
+
+
+?>
+
+<?php 
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,14 +53,26 @@
         </div>
         <nav class="nav">
             <span class="nav-link">HOME</span>
+
+           
             <div class="dropdown">
                 <span class="nav-link">BAGS</span>
                 <div class="dropdown-content">
-                    <span class="nav-drop"></span>
-                    <span class="nav-drop"></span>
-                    <span class="nav-drop"></span>
+                    <?php while($row = mysqli_fetch_assoc($result)) { ?>
+                        <div class="nav-drop">
+                            <span class="brand_name"><?php echo $row["Brand_Name"]; ?></span>
+                            <div class="child_categories">
+                                <a 
+                                href="bags.php?query=SELECT * FROM products WHERE GrandChild_Category = '<?php echo $row['Grandchild_Category']; ?>'"><?php echo $row['Grandchild_Category']; ?></a>
+                            </div>  
+                        </div>
+                        <?php } ?>
+
                 </div>
             </div>
+            
+
+
             <div class="dropdown">
                 <span class="nav-link">JEWELRY</span>
                 <div class="dropdown-content">

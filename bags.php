@@ -1,3 +1,13 @@
+<?php
+// Retrieve the query parameter from the URL
+require_once('database/db.php');
+$query = $_GET['query'];
+echo $query;
+$result = $mysqli->query($query);
+
+// Execute the SQL query against your database
+// ...
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -248,18 +258,21 @@
                 <!-- FEATURED PRODUCTS SECTION -->
                 <h2>Brand Name</h2>
                 <div class="featured-products">
-                    
+                <?php while($row = mysqli_fetch_assoc($result)) { ?>
                     <div class="product-container">
-                        <img src="https://cdn11.bigcommerce.com/s-u1vaaqdywl/images/stencil/320w/products/21654/22156/wsxc1678985496200_0__45508.1678975570.jpg?c=1" alt="Product Image"/>
+                        
+                        <img src="<?php echo $row["Thumbnail"]; ?>" alt="Product Image"/>
                         <div class="item-description">
-                            <span class="brand-name">Chanel</span>
-                            <p class="product-name">Chanel 23C Camellia Quilted Denim Heart Crush Small Classic Flap</p>
+                            <span class="brand-name"><?php echo $row["Brand_Name"]; ?></span>
+                            <p class="product-name"><?php echo $row["Product_Description"]; ?></p>
                             <div class="prices">
-                                <span class="price">USD 500</span>
-                                <span class="sale-price">USD 210</span>
+                                <span class="price"><?php echo $row["Price"]; ?></span>
+                                <span class="sale-price"><?php echo $row["Sale_Price"]; ?></span>
                             </div>
                         </div>
+                        
                     </div>
+                    <?php } ?>
                     <div class="product-container">
                         <img src="https://cdn11.bigcommerce.com/s-u1vaaqdywl/images/stencil/320w/products/3639/3971/bvjo35lawi__61921.1678294825.jpg?c=1" alt="Product Image"/>
                         <div class="item-description">
