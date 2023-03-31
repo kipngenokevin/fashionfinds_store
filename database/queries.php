@@ -1,0 +1,170 @@
+<?php 
+// Write your SQL query
+//Queries for Products whose Root Category is Bags
+$querybag1 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Yves Saint Laurent" AND Root_Category="Bags"';
+$querybag2 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Versace" AND Root_Category="Bags"';
+$querybag3 ='SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Valentino" AND Root_Category="Bags"';
+$querybag4 ='SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Tory Burch" AND Root_Category="Bags"';
+$querybag5 ='SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Tom Ford" AND Root_Category="Bags"';
+$querybag6 ='SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Stella McCartney" AND Root_Category="Bags"';
+$querybag7 ='SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Salvatore Ferragamo" AND Root_Category="Bags"';
+$querybag8 ='SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Roger Vivier" AND Root_Category="Bags"';
+$querybag9 ='SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Rimowa" AND Root_Category="Bags"';
+$querybag10 ='SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Prada" AND Root_Category="Bags"';
+$querybag11 ='SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Moynat" AND Root_Category="Bags"';
+$querybag12 ='SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Miu Miu" AND Root_Category="Bags"';
+$querybag13 ='SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Michael Kors" AND Root_Category="Bags"';
+$querybag14 ='SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "MCM" AND Root_Category="Bags"';
+$querybag15 ='SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Marni" AND Root_Category="Bags"';
+$querybag16 ='SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Loewe" AND Root_Category="Bags"';
+$querybag17 ='SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Hermes" AND Root_Category="Bags"';
+$querybag18 ='SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Gift Bags & Boxes" AND Root_Category="Bags"';
+$querybag19 ='SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Fendi" AND Root_Category="Bags"';
+$querybag20 ='SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Delvaux" AND Root_Category="Bags"';
+$querybag21 ='SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Christian Dior" AND Root_Category="Bags"';
+$querybag22 ='SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Boyy" AND Root_Category="Bags"';
+$querybag23 ='SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Bottega Veneta" AND Root_Category="Bags"';
+
+//Execute the Bags Queries 
+$resultbag1 = $mysqli->query($querybag1);
+$resultbag2 = $mysqli->query($querybag2);
+$resultbag3 = $mysqli->query($querybag3);
+$resultbag4 = $mysqli->query($querybag4);
+$resultbag5 = $mysqli->query($querybag5);
+$resultbag6 = $mysqli->query($querybag6);
+$resultbag7 = $mysqli->query($querybag7);
+$resultbag8 = $mysqli->query($querybag8);
+$resultbag9 = $mysqli->query($querybag9);
+$resultbag10 = $mysqli->query($querybag10);
+$resultbag11 = $mysqli->query($querybag11);
+$resultbag12 = $mysqli->query($querybag12);
+$resultbag13 = $mysqli->query($querybag13);
+$resultbag14 = $mysqli->query($querybag14);
+$resultbag15 = $mysqli->query($querybag15);
+$resultbag16 = $mysqli->query($querybag16);
+$resultbag17 = $mysqli->query($querybag17);
+$resultbag18 = $mysqli->query($querybag18);
+$resultbag19 = $mysqli->query($querybag19);
+$resultbag20 = $mysqli->query($querybag20);
+$resultbag21 = $mysqli->query($querybag21);
+$resultbag22 = $mysqli->query($querybag22);
+$resultbag23 = $mysqli->query($querybag23);
+
+// Queries for Products whose Root Category is Jewelry
+
+$queryjewl1 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Prada" AND Root_Category="Jewelry"';
+$queryjewl2 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Yves Saint Laurent" AND Root_Category="Jewelry"';
+$queryjewl3 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Versace" AND Root_Category="Jewelry"';
+$queryjewl4 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Van Cleef & Arpels" AND Root_Category="Jewelry"';
+$queryjewl5 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Valentino" AND Root_Category="Jewelry"';
+$queryjewl6 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Tiffany & Co." AND Root_Category="Jewelry"';
+$queryjewl7 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Piaget" AND Root_Category="Jewelry"';
+$queryjewl8 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Pandora" AND Root_Category="Jewelry"';
+$queryjewl9 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Other brands" AND Root_Category="Jewelry"';
+$queryjewl10 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Miu Miu" AND Root_Category="Jewelry"';
+$queryjewl11 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Messika" AND Root_Category="Jewelry"';
+$queryjewl12 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Louis Vuitton" AND Root_Category="Jewelry"';
+$queryjewl13 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Loewe" AND Root_Category="Jewelry"';
+$queryjewl14 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Hermes" AND Root_Category="Jewelry"';
+$queryjewl15 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Harry Winston" AND Root_Category="Jewelry"';
+$queryjewl16 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Gucci" AND Root_Category="Jewelry"';
+$queryjewl17 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Graff" AND Root_Category="Jewelry"';
+$queryjewl18 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Givenchy" AND Root_Category="Jewelry"';
+$queryjewl19 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Gevlar" AND Root_Category="Jewelry"';
+$queryjewl20 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Fendi" AND Root_Category="Jewelry"';
+$queryjewl21 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Dolce & Gabbana" AND Root_Category="Jewelry"';
+$queryjewl22 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Christian Dior" AND Root_Category="Jewelry"';
+$queryjewl23 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Chopin" AND Root_Category="Jewelry"';
+$queryjewl24 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Chopard" AND Root_Category="Jewelry"';
+$queryjewl25 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Chloe" AND Root_Category="Jewelry"';
+$queryjewl26 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Chaumet" AND Root_Category="Jewelry"';
+$queryjewl27 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Chanel" AND Root_Category="Jewelry"';
+$queryjewl28 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Celine" AND Root_Category="Jewelry"';
+$queryjewl29 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Cartier" AND Root_Category="Jewelry"';
+$queryjewl30 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Bvlgari" AND Root_Category="Jewelry"';
+$queryjewl31 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Burberry" AND Root_Category="Jewelry"';
+$queryjewl32 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Bottega Veneta" AND Root_Category="Jewelry"';
+$queryjewl33 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Balenciaga" AND Root_Category="Jewelry"';
+$queryjewl34 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "APM" AND Root_Category="Jewelry"';
+
+//Execute the Jewelry Queries 
+$resultjewel1 = $mysqli->query($queryjewl1);
+$resultjewel2 = $mysqli->query($queryjewl2);
+$resultjewel3 = $mysqli->query($queryjewl3);
+$resultjewel4 = $mysqli->query($queryjewl4);
+$resultjewel5 = $mysqli->query($queryjewl5);
+$resultjewel6 = $mysqli->query($queryjewl6);
+$resultjewel7 = $mysqli->query($queryjewl7);
+$resultjewel8 = $mysqli->query($queryjewl8);
+$resultjewel9 = $mysqli->query($queryjewl9);
+$resultjewel10 = $mysqli->query($queryjewl10);
+$resultjewel11 = $mysqli->query($queryjewl11);
+$resultjewel12 = $mysqli->query($queryjewl12);
+$resultjewel13 = $mysqli->query($queryjewl13);
+$resultjewel14 = $mysqli->query($queryjewl14);
+$resultjewel15 = $mysqli->query($queryjewl15);
+$resultjewel16 = $mysqli->query($queryjewl16);
+$resultjewel17 = $mysqli->query($queryjewl17);
+$resultjewel18 = $mysqli->query($queryjewl18);
+$resultjewel19 = $mysqli->query($queryjewl19);
+$resultjewel20 = $mysqli->query($queryjewl20);
+$resultjewel21 = $mysqli->query($queryjewl21);
+$resultjewel22 = $mysqli->query($queryjewl22);
+$resultjewel23 = $mysqli->query($queryjewl23);
+$resultjewel24 = $mysqli->query($queryjewl24);
+$resultjewel25 = $mysqli->query($queryjewl25);
+$resultjewel26 = $mysqli->query($queryjewl26);
+$resultjewel27 = $mysqli->query($queryjewl27);
+$resultjewel28 = $mysqli->query($queryjewl28);
+$resultjewel29 = $mysqli->query($queryjewl29);
+$resultjewel30 = $mysqli->query($queryjewl30);
+$resultjewel31 = $mysqli->query($queryjewl31);
+$resultjewel32 = $mysqli->query($queryjewl32);
+$resultjewel33 = $mysqli->query($queryjewl33);
+$resultjewel34 = $mysqli->query($queryjewl34);
+
+// Queries for Products whose Root Category is Shoes
+$queryshoe1 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Yves Saint Laurent" AND Root_Category="Shoes"';
+$queryshoe1 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Yeezy" AND Root_Category="Shoes"';
+$queryshoe1 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Versace" AND Root_Category="Shoes"';
+$queryshoe1 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Valentino" AND Root_Category="Shoes"';
+$queryshoe1 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "UGG" AND Root_Category="Shoes"';
+$queryshoe1 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Tom Ford" AND Root_Category="Shoes"';
+$queryshoe1 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Stuart Weitzman" AND Root_Category="Shoes"';
+$queryshoe1 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Adidas" AND Root_Category="Shoes"';
+$queryshoe1 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Sergio Rossi" AND Root_Category="Shoes"';
+$queryshoe1 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Roger Vivier" AND Root_Category="Shoes"';
+$queryshoe1 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Premiata" AND Root_Category="Shoes"';
+$queryshoe1 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Prada" AND Root_Category="Shoes"';
+$queryshoe1 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Dolce & Gabbana" AND Root_Category="Shoes"';
+$queryshoe1 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Paris Texas" AND Root_Category="Shoes"';
+$queryshoe1 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Nike" AND Root_Category="Shoes"';
+$queryshoe1 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Nicholas Kirkwood" AND Root_Category="Shoes"';
+$queryshoe1 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Miu Miu" AND Root_Category="Shoes"';
+$queryshoe1 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Manolo Blahnik" AND Root_Category="Shoes"';
+$queryshoe1 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Malone Souliers" AND Root_Category="Shoes"';
+$queryshoe1 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Mach & Mach" AND Root_Category="Shoes"';
+$queryshoe1 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Louis Vuitton" AND Root_Category="Shoes"';
+$queryshoe1 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Fendi" AND Root_Category="Shoes"';
+$queryshoe1 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Loro Piana" AND Root_Category="Shoes"';
+$queryshoe1 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Loewe" AND Root_Category="Shoes"';
+$queryshoe1 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Lanvin" AND Root_Category="Shoes"';
+$queryshoe1 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Jil Sander" AND Root_Category="Shoes"';
+$queryshoe1 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Hogan" AND Root_Category="Shoes"';
+$queryshoe1 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Gucci" AND Root_Category="Shoes"';
+$queryshoe1 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Goyard" AND Root_Category="Shoes"';
+$queryshoe1 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Golden Goose" AND Root_Category="Shoes"';
+$queryshoe1 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Christian Louboutin" AND Root_Category="Shoes"';
+$queryshoe1 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Chloe" AND Root_Category="Shoes"';
+$queryshoe1 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Celine" AND Root_Category="Shoes"';
+$queryshoe1 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "By Far" AND Root_Category="Shoes"';
+$queryshoe1 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Burberry" AND Root_Category="Shoes"';
+$queryshoe1 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Bottega Veneta" AND Root_Category="Shoes"';
+$queryshoe1 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Balenciaga" AND Root_Category="Shoes"';
+$queryshoe1 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Aquazzura" AND Root_Category="Shoes"';
+$queryshoe1 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Amina Muaddi" AND Root_Category="Shoes"';
+$queryshoe1 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Alexander Wang" AND Root_Category="Shoes"';
+//Execute the Shoe Queries 
+
+
+?>

@@ -2,29 +2,11 @@
 // Include the database connector
 require_once('database/db.php');
 
-// Write your SQL query
-$query = 'SELECT  Brand_Name, Grandchild_Category  FROM products WHERE Root_Category="Bags" GROUP BY Brand_Name';
-$query1 = '';
+require('database/queries.php')
 
-//$query = 'SELECT DISTINCT Brand_Name FROM products WHERE Root_Category = "Bags"';
-$query2 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Root_Category = "Bags" GROUP BY Grandchild_Category';
-$query3 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Yves Saint Laurent"';
-
-
-// Execute the query against the database
-$result = $mysqli->query($query);
-$result2 = $mysqli->query($query2);
-$result3 = $mysqli->query($query3);
-echo $query2;
-
-
+//Queries for Products whose Root Category is Jewelry
 
 ?>
-
-<?php 
-
-?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -40,6 +22,7 @@ echo $query2;
 
     <!-- CSS FONTS FROM GOOGLE -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;600;700;800;900&display=swap" rel="stylesheet">
 
@@ -56,17 +39,256 @@ echo $query2;
 
            
             <div class="dropdown">
-                <span class="nav-link">BAGS</span>
+                <span class="nav-link">BAGS <i class="material-icons">&#xe313;</i></span>
                 <div class="dropdown-content">
-                    <?php while($row = mysqli_fetch_assoc($result)) { ?>
-                        <div class="nav-drop">
-                            <span class="brand_name"><?php echo $row["Brand_Name"]; ?></span>
+                     <div class="nav-drop">
+                            <span class="brand_name">Yves Saint Laurent</span>
+                            <?php while($row = mysqli_fetch_assoc($resultbag1)) { ?>
                             <div class="child_categories">
                                 <a 
                                 href="bags.php?query=SELECT * FROM products WHERE GrandChild_Category = '<?php echo $row['Grandchild_Category']; ?>'"><?php echo $row['Grandchild_Category']; ?></a>
-                            </div>  
-                        </div>
-                        <?php } ?>
+                            </div> 
+                            <?php } ?> 
+                     </div>
+
+
+                     <div class="nav-drop">
+                            <span class="brand_name">Christian Dior</span>
+                            <?php while($row = mysqli_fetch_assoc($resultbag21)) { ?>
+                            <div class="child_categories">
+                                <a 
+                                href="bags.php?query=SELECT * FROM products WHERE GrandChild_Category = '<?php echo $row['Grandchild_Category']; ?>'"><?php echo $row['Grandchild_Category']; ?></a>
+                            </div> 
+                            <?php } ?> 
+                     </div>
+
+                     <div class="nav-drop">
+                            <span class="brand_name">Fendi</span>
+                            <?php while($row = mysqli_fetch_assoc($resultbag19)) { ?>
+                            <div class="child_categories">
+                                <a 
+                                href="bags.php?query=SELECT * FROM products WHERE GrandChild_Category = '<?php echo $row['Grandchild_Category']; ?>'"><?php echo $row['Grandchild_Category']; ?></a>
+                            </div> 
+                            <?php } ?> 
+                     </div>
+
+                     
+
+                     <div class="nav-drop">
+                            <span class="brand_name">Hermes</span>
+                            <?php while($row = mysqli_fetch_assoc($resultbag17)) { ?>
+                            <div class="child_categories">
+                                <a 
+                                href="bags.php?query=SELECT * FROM products WHERE GrandChild_Category = '<?php echo $row['Grandchild_Category']; ?>'"><?php echo $row['Grandchild_Category']; ?></a>
+                            </div> 
+                            <?php } ?> 
+                     </div>
+
+                     <div class="nav-drop">
+                            <span class="brand_name">Prada</span>
+                            <?php while($row = mysqli_fetch_assoc($resultbag10)) { ?>
+                            <div class="child_categories">
+                                <a 
+                                href="bags.php?query=SELECT * FROM products WHERE GrandChild_Category = '<?php echo $row['Grandchild_Category']; ?>'"><?php echo $row['Grandchild_Category']; ?></a>
+                            </div> 
+                            <?php } ?> 
+                     </div>
+
+                     <div class="nav-drop">
+                            <span class="brand_name">Bottega Veneta</span>
+                            <?php while($row = mysqli_fetch_assoc($resultbag23)) { ?>
+                            <div class="child_categories">
+                                <a 
+                                href="bags.php?query=SELECT * FROM products WHERE GrandChild_Category = '<?php echo $row['Grandchild_Category']; ?>'"><?php echo $row['Grandchild_Category']; ?></a>
+                            </div> 
+                            <?php } ?> 
+                     </div>
+
+                     <div class="nav-drop">
+                            <span class="brand_name">Loewe</span>
+                            <?php while($row = mysqli_fetch_assoc($resultbag16)) { ?>
+                            <div class="child_categories">
+                                <a 
+                                href="bags.php?query=SELECT * FROM products WHERE GrandChild_Category = '<?php echo $row['Grandchild_Category']; ?>'"><?php echo $row['Grandchild_Category']; ?></a>
+                            </div> 
+                            <?php } ?> 
+                     </div>
+
+                     
+
+                     <div class="nav-drop">
+                            <span class="brand_name">Miu Miu</span>
+                            <?php while($row = mysqli_fetch_assoc($resultbag12)) { ?>
+                            <div class="child_categories">
+                                <a 
+                                href="bags.php?query=SELECT * FROM products WHERE GrandChild_Category = '<?php echo $row['Grandchild_Category']; ?>'"><?php echo $row['Grandchild_Category']; ?></a>
+                            </div> 
+                            <?php } ?> 
+                     </div>
+
+                     <div class="nav-drop">
+                            <span class="brand_name">Valentino</span>
+                            <?php while($row = mysqli_fetch_assoc($resultbag3)) { ?>
+                            <div class="child_categories">
+                                <a 
+                                href="bags.php?query=SELECT * FROM products WHERE GrandChild_Category = '<?php echo $row['Grandchild_Category']; ?>'"><?php echo $row['Grandchild_Category']; ?></a>
+                            </div> 
+                            <?php } ?> 
+                     </div>
+
+                     <div class="nav-drop">
+                            <span class="brand_name">Versace</span>
+                            <?php while($row = mysqli_fetch_assoc($resultbag2)) { ?>
+                            <div class="child_categories">
+                                <a 
+                                href="bags.php?query=SELECT * FROM products WHERE GrandChild_Category = '<?php echo $row['Grandchild_Category']; ?>'"><?php echo $row['Grandchild_Category']; ?></a>
+                            </div> 
+                            <?php } ?> 
+                     </div>
+
+                     <div class="nav-drop">
+                            <span class="brand_name">Tory Burch</span>
+                            <?php while($row = mysqli_fetch_assoc($resultbag4)) { ?>
+                            <div class="child_categories">
+                                <a 
+                                href="bags.php?query=SELECT * FROM products WHERE GrandChild_Category = '<?php echo $row['Grandchild_Category']; ?>'"><?php echo $row['Grandchild_Category']; ?></a>
+                            </div> 
+                            <?php } ?> 
+                     </div>
+
+                     <div class="nav-drop">
+                            <span class="brand_name">Tom Ford</span>
+                            <?php while($row = mysqli_fetch_assoc($resultbag5)) { ?>
+                            <div class="child_categories">
+                                <a 
+                                href="bags.php?query=SELECT * FROM products WHERE GrandChild_Category = '<?php echo $row['Grandchild_Category']; ?>'"><?php echo $row['Grandchild_Category']; ?></a>
+                            </div> 
+                            <?php } ?> 
+                     </div>
+
+                     <div class="nav-drop">
+                            <span class="brand_name">Stella McCartney</span>
+                            <?php while($row = mysqli_fetch_assoc($resultbag6)) { ?>
+                            <div class="child_categories">
+                                <a 
+                                href="bags.php?query=SELECT * FROM products WHERE GrandChild_Category = '<?php echo $row['Grandchild_Category']; ?>'"><?php echo $row['Grandchild_Category']; ?></a>
+                            </div> 
+                            <?php } ?> 
+                     </div>
+
+                     <div class="nav-drop">
+                            <span class="brand_name">Salvatore Ferragamo</span>
+                            <?php while($row = mysqli_fetch_assoc($resultbag7)) { ?>
+                            <div class="child_categories">
+                                <a 
+                                href="bags.php?query=SELECT * FROM products WHERE GrandChild_Category = '<?php echo $row['Grandchild_Category']; ?>'"><?php echo $row['Grandchild_Category']; ?></a>
+                            </div> 
+                            <?php } ?> 
+                     </div>
+
+                     <div class="nav-drop">
+                            <span class="brand_name">Roger Vivier</span>
+                            <?php while($row = mysqli_fetch_assoc($resultbag8)) { ?>
+                            <div class="child_categories">
+                                <a 
+                                href="bags.php?query=SELECT * FROM products WHERE GrandChild_Category = '<?php echo $row['Grandchild_Category']; ?>'"><?php echo $row['Grandchild_Category']; ?></a>
+                            </div> 
+                            <?php } ?> 
+                     </div>
+
+                     <div class="nav-drop">
+                            <span class="brand_name">Rimowa</span>
+                            <?php while($row = mysqli_fetch_assoc($resultbag9)) { ?>
+                            <div class="child_categories">
+                                <a 
+                                href="bags.php?query=SELECT * FROM products WHERE GrandChild_Category = '<?php echo $row['Grandchild_Category']; ?>'"><?php echo $row['Grandchild_Category']; ?></a>
+                            </div> 
+                            <?php } ?> 
+                     </div>
+
+                     
+
+                     <div class="nav-drop">
+                            <span class="brand_name">Moynat</span>
+                            <?php while($row = mysqli_fetch_assoc($resultbag11)) { ?>
+                            <div class="child_categories">
+                                <a 
+                                href="bags.php?query=SELECT * FROM products WHERE GrandChild_Category = '<?php echo $row['Grandchild_Category']; ?>'"><?php echo $row['Grandchild_Category']; ?></a>
+                            </div> 
+                            <?php } ?> 
+                     </div>
+
+                    
+
+                     <div class="nav-drop">
+                            <span class="brand_name">Michael Kors</span>
+                            <?php while($row = mysqli_fetch_assoc($resultbag13)) { ?>
+                            <div class="child_categories">
+                                <a 
+                                href="bags.php?query=SELECT * FROM products WHERE GrandChild_Category = '<?php echo $row['Grandchild_Category']; ?>'"><?php echo $row['Grandchild_Category']; ?></a>
+                            </div> 
+                            <?php } ?> 
+                     </div>
+
+                     <div class="nav-drop">
+                            <span class="brand_name">MCM</span>
+                            <?php while($row = mysqli_fetch_assoc($resultbag14)) { ?>
+                            <div class="child_categories">
+                                <a 
+                                href="bags.php?query=SELECT * FROM products WHERE GrandChild_Category = '<?php echo $row['Grandchild_Category']; ?>'"><?php echo $row['Grandchild_Category']; ?></a>
+                            </div> 
+                            <?php } ?> 
+                     </div>
+
+                     <div class="nav-drop">
+                            <span class="brand_name">Marni</span>
+                            <?php while($row = mysqli_fetch_assoc($resultbag15)) { ?>
+                            <div class="child_categories">
+                                <a 
+                                href="bags.php?query=SELECT * FROM products WHERE GrandChild_Category = '<?php echo $row['Grandchild_Category']; ?>'"><?php echo $row['Grandchild_Category']; ?></a>
+                            </div> 
+                            <?php } ?> 
+                     </div>
+
+                    
+
+                     
+
+                     <div class="nav-drop">
+                            <span class="brand_name">Gift Bags & Boxes</span>
+                            <?php while($row = mysqli_fetch_assoc($resultbag18)) { ?>
+                            <div class="child_categories">
+                                <a 
+                                href="bags.php?query=SELECT * FROM products WHERE GrandChild_Category = '<?php echo $row['Grandchild_Category']; ?>'"><?php echo $row['Grandchild_Category']; ?></a>
+                            </div> 
+                            <?php } ?> 
+                     </div>
+
+                     
+
+                     <div class="nav-drop">
+                            <span class="brand_name">Delvaux</span>
+                            <?php while($row = mysqli_fetch_assoc($resultbag20)) { ?>
+                            <div class="child_categories">
+                                <a 
+                                href="bags.php?query=SELECT * FROM products WHERE GrandChild_Category = '<?php echo $row['Grandchild_Category']; ?>'"><?php echo $row['Grandchild_Category']; ?></a>
+                            </div> 
+                            <?php } ?> 
+                     </div>
+
+                    
+
+                     <div class="nav-drop">
+                            <span class="brand_name">Boyy</span>
+                            <?php while($row = mysqli_fetch_assoc($resultbag22)) { ?>
+                            <div class="child_categories">
+                                <a 
+                                href="bags.php?query=SELECT * FROM products WHERE GrandChild_Category = '<?php echo $row['Grandchild_Category']; ?>'"><?php echo $row['Grandchild_Category']; ?></a>
+                            </div> 
+                            <?php } ?> 
+                     </div>
+
+                    
 
                 </div>
             </div>
@@ -74,178 +296,372 @@ echo $query2;
 
 
             <div class="dropdown">
-                <span class="nav-link">JEWELRY</span>
+                <span class="nav-link">JEWELRY  <i class="material-icons">&#xe313;</i></span>
+                    <div class="dropdown-content">
+                        <!-- Sample content 1 -->
+                        <div class="nav-drop">
+                                <span class="brand_name">Prada</span>
+                                <?php while($row = mysqli_fetch_assoc($resultjewel1)) { ?>
+                                <div class="child_categories">
+                                    <a 
+                                    href="bags.php?query=SELECT * FROM products WHERE GrandChild_Category = '<?php echo $row['Grandchild_Category']; ?>'"><?php echo $row['Grandchild_Category']; ?></a>
+                                </div> 
+                                <?php } ?> 
+                        </div>   
+
+                        <div class="nav-drop">
+                            <span class="brand_name">Chanel</span>
+                            <?php while($row = mysqli_fetch_assoc($resultjewel27)) { ?>
+                            <div class="child_categories">
+                                <a 
+                                href="bags.php?query=SELECT * FROM products WHERE GrandChild_Category = '<?php echo $row['Grandchild_Category']; ?>'"><?php echo $row['Grandchild_Category']; ?></a>
+                            </div> 
+                            <?php } ?> 
+                        </div>  
+
+                        <div class="nav-drop">
+                            <span class="brand_name">Christian Dior</span>
+                            <?php while($row = mysqli_fetch_assoc($resultjewel22)) { ?>
+                            <div class="child_categories">
+                                <a 
+                                href="bags.php?query=SELECT * FROM products WHERE GrandChild_Category = '<?php echo $row['Grandchild_Category']; ?>'"><?php echo $row['Grandchild_Category']; ?></a>
+                            </div> 
+                            <?php } ?> 
+                        </div>   
+
+                        <div class="nav-drop">
+                            <span class="brand_name">Yves Saint Laurent</span>
+                            <?php while($row = mysqli_fetch_assoc($resultjewel2)) { ?>
+                            <div class="child_categories">
+                                <a 
+                                href="bags.php?query=SELECT * FROM products WHERE GrandChild_Category = '<?php echo $row['Grandchild_Category']; ?>'"><?php echo $row['Grandchild_Category']; ?></a>
+                            </div> 
+                            <?php } ?> 
+                        </div>     
+
+                        <div class="nav-drop">
+                            <span class="brand_name">Versace</span>
+                            <?php while($row = mysqli_fetch_assoc($resultjewel3)) { ?>
+                            <div class="child_categories">
+                                <a 
+                                href="bags.php?query=SELECT * FROM products WHERE GrandChild_Category = '<?php echo $row['Grandchild_Category']; ?>'"><?php echo $row['Grandchild_Category']; ?></a>
+                            </div> 
+                            <?php } ?> 
+                        </div>   
+
+                        <div class="nav-drop">
+                            <span class="brand_name">Van Cleef & Arpels</span>
+                            <?php while($row = mysqli_fetch_assoc($resultjewel4)) { ?>
+                            <div class="child_categories">
+                                <a 
+                                href="bags.php?query=SELECT * FROM products WHERE GrandChild_Category = '<?php echo $row['Grandchild_Category']; ?>'"><?php echo $row['Grandchild_Category']; ?></a>
+                            </div> 
+                            <?php } ?> 
+                        </div>   
+
+                        <div class="nav-drop">
+                            <span class="brand_name">Valentino</span>
+                            <?php while($row = mysqli_fetch_assoc($resultjewel5)) { ?>
+                            <div class="child_categories">
+                                <a 
+                                href="bags.php?query=SELECT * FROM products WHERE GrandChild_Category = '<?php echo $row['Grandchild_Category']; ?>'"><?php echo $row['Grandchild_Category']; ?></a>
+                            </div> 
+                            <?php } ?> 
+                        </div>   
+
+
+
+                        <div class="nav-drop">
+                            <span class="brand_name">Tiffany & Co.</span>
+                            <?php while($row = mysqli_fetch_assoc($resultjewel6)) { ?>
+                            <div class="child_categories">
+                                <a 
+                                href="bags.php?query=SELECT * FROM products WHERE GrandChild_Category = '<?php echo $row['Grandchild_Category']; ?>'"><?php echo $row['Grandchild_Category']; ?></a>
+                            </div> 
+                            <?php } ?> 
+                        </div>   
+
+                        <div class="nav-drop">
+                            <span class="brand_name">Piaget</span>
+                            <?php while($row = mysqli_fetch_assoc($resultjewel7)) { ?>
+                            <div class="child_categories">
+                                <a 
+                                href="bags.php?query=SELECT * FROM products WHERE GrandChild_Category = '<?php echo $row['Grandchild_Category']; ?>'"><?php echo $row['Grandchild_Category']; ?></a>
+                            </div> 
+                            <?php } ?> 
+                        </div>  
+                        
+                        
+                        <div class="nav-drop">
+                            <span class="brand_name">Bvlgari</span>
+                            <?php while($row = mysqli_fetch_assoc($resultjewel30)) { ?>
+                            <div class="child_categories">
+                                <a 
+                                href="bags.php?query=SELECT * FROM products WHERE GrandChild_Category = '<?php echo $row['Grandchild_Category']; ?>'"><?php echo $row['Grandchild_Category']; ?></a>
+                            </div> 
+                            <?php } ?> 
+                        </div> 
+
+                        <div class="nav-drop">
+                            <span class="brand_name">Pandora</span>
+                            <?php while($row = mysqli_fetch_assoc($resultjewel8)) { ?>
+                            <div class="child_categories">
+                                <a 
+                                href="bags.php?query=SELECT * FROM products WHERE GrandChild_Category = '<?php echo $row['Grandchild_Category']; ?>'"><?php echo $row['Grandchild_Category']; ?></a>
+                            </div> 
+                            <?php } ?> 
+                        </div>   
+
+                        <div class="nav-drop">
+                            <span class="brand_name">Other brands</span>
+                            <?php while($row = mysqli_fetch_assoc($resultjewel9)) { ?>
+                            <div class="child_categories">
+                                <a 
+                                href="bags.php?query=SELECT * FROM products WHERE GrandChild_Category = '<?php echo $row['Grandchild_Category']; ?>'"><?php echo $row['Grandchild_Category']; ?></a>
+                            </div> 
+                            <?php } ?> 
+                        </div>   
+
+                        <div class="nav-drop">
+                            <span class="brand_name">Miu Miu</span>
+                            <?php while($row = mysqli_fetch_assoc($resultjewel10)) { ?>
+                            <div class="child_categories">
+                                <a 
+                                href="bags.php?query=SELECT * FROM products WHERE GrandChild_Category = '<?php echo $row['Grandchild_Category']; ?>'"><?php echo $row['Grandchild_Category']; ?></a>
+                            </div> 
+                            <?php } ?> 
+                        </div>   
+
+                        <div class="nav-drop">
+                            <span class="brand_name">Messika</span>
+                            <?php while($row = mysqli_fetch_assoc($resultjewel11)) { ?>
+                            <div class="child_categories">
+                                <a 
+                                href="bags.php?query=SELECT * FROM products WHERE GrandChild_Category = '<?php echo $row['Grandchild_Category']; ?>'"><?php echo $row['Grandchild_Category']; ?></a>
+                            </div> 
+                            <?php } ?> 
+                        </div>   
+
+                        <div class="nav-drop">
+                            <span class="brand_name">Louis Vuitton</span>
+                            <?php while($row = mysqli_fetch_assoc($resultjewel12)) { ?>
+                            <div class="child_categories">
+                                <a 
+                                href="bags.php?query=SELECT * FROM products WHERE GrandChild_Category = '<?php echo $row['Grandchild_Category']; ?>'"><?php echo $row['Grandchild_Category']; ?></a>
+                            </div> 
+                            <?php } ?> 
+                        </div>   
+
+                        <div class="nav-drop">
+                            <span class="brand_name">Loewe</span>
+                            <?php while($row = mysqli_fetch_assoc($resultjewel13)) { ?>
+                            <div class="child_categories">
+                                <a 
+                                href="bags.php?query=SELECT * FROM products WHERE GrandChild_Category = '<?php echo $row['Grandchild_Category']; ?>'"><?php echo $row['Grandchild_Category']; ?></a>
+                            </div> 
+                            <?php } ?> 
+                        </div>   
+
+                        <div class="nav-drop">
+                            <span class="brand_name">Hermes</span>
+                            <?php while($row = mysqli_fetch_assoc($resultjewel14)) { ?>
+                            <div class="child_categories">
+                                <a 
+                                href="bags.php?query=SELECT * FROM products WHERE GrandChild_Category = '<?php echo $row['Grandchild_Category']; ?>'"><?php echo $row['Grandchild_Category']; ?></a>
+                            </div> 
+                            <?php } ?> 
+                        </div>   
+
+                        <div class="nav-drop">
+                            <span class="brand_name">Harry Winston</span>
+                            <?php while($row = mysqli_fetch_assoc($resultjewel15)) { ?>
+                            <div class="child_categories">
+                                <a 
+                                href="bags.php?query=SELECT * FROM products WHERE GrandChild_Category = '<?php echo $row['Grandchild_Category']; ?>'"><?php echo $row['Grandchild_Category']; ?></a>
+                            </div> 
+                            <?php } ?> 
+                        </div>   
+
+                        <div class="nav-drop">
+                            <span class="brand_name">Gucci</span>
+                            <?php while($row = mysqli_fetch_assoc($resultjewel16)) { ?>
+                            <div class="child_categories">
+                                <a 
+                                href="bags.php?query=SELECT * FROM products WHERE GrandChild_Category = '<?php echo $row['Grandchild_Category']; ?>'"><?php echo $row['Grandchild_Category']; ?></a>
+                            </div> 
+                            <?php } ?> 
+                        </div>   
+
+                        <div class="nav-drop">
+                            <span class="brand_name">Graff</span>
+                            <?php while($row = mysqli_fetch_assoc($resultjewel17)) { ?>
+                            <div class="child_categories">
+                                <a 
+                                href="bags.php?query=SELECT * FROM products WHERE GrandChild_Category = '<?php echo $row['Grandchild_Category']; ?>'"><?php echo $row['Grandchild_Category']; ?></a>
+                            </div> 
+                            <?php } ?> 
+                        </div>   
+
+                        <div class="nav-drop">
+                            <span class="brand_name">Givenchy</span>
+                            <?php while($row = mysqli_fetch_assoc($resultjewel18)) { ?>
+                            <div class="child_categories">
+                                <a 
+                                href="bags.php?query=SELECT * FROM products WHERE GrandChild_Category = '<?php echo $row['Grandchild_Category']; ?>'"><?php echo $row['Grandchild_Category']; ?></a>
+                            </div> 
+                            <?php } ?> 
+                        </div>   
+
+                        <div class="nav-drop">
+                            <span class="brand_name">Gevlar</span>
+                            <?php while($row = mysqli_fetch_assoc($resultjewel19)) { ?>
+                            <div class="child_categories">
+                                <a 
+                                href="bags.php?query=SELECT * FROM products WHERE GrandChild_Category = '<?php echo $row['Grandchild_Category']; ?>'"><?php echo $row['Grandchild_Category']; ?></a>
+                            </div> 
+                            <?php } ?> 
+                        </div>   
+
+                        <div class="nav-drop">
+                            <span class="brand_name">Fendi</span>
+                            <?php while($row = mysqli_fetch_assoc($resultjewel20)) { ?>
+                            <div class="child_categories">
+                                <a 
+                                href="bags.php?query=SELECT * FROM products WHERE GrandChild_Category = '<?php echo $row['Grandchild_Category']; ?>'"><?php echo $row['Grandchild_Category']; ?></a>
+                            </div> 
+                            <?php } ?> 
+                        </div>   
+
+                        <div class="nav-drop">
+                            <span class="brand_name">Dolce & Gabbana</span>
+                            <?php while($row = mysqli_fetch_assoc($resultjewel21)) { ?>
+                            <div class="child_categories">
+                                <a 
+                                href="bags.php?query=SELECT * FROM products WHERE GrandChild_Category = '<?php echo $row['Grandchild_Category']; ?>'"><?php echo $row['Grandchild_Category']; ?></a>
+                            </div> 
+                            <?php } ?> 
+                        </div>   
+
+                        
+
+                        <div class="nav-drop">
+                            <span class="brand_name">Chopin</span>
+                            <?php while($row = mysqli_fetch_assoc($resultjewel23)) { ?>
+                            <div class="child_categories">
+                                <a 
+                                href="bags.php?query=SELECT * FROM products WHERE GrandChild_Category = '<?php echo $row['Grandchild_Category']; ?>'"><?php echo $row['Grandchild_Category']; ?></a>
+                            </div> 
+                            <?php } ?> 
+                        </div>   
+
+                        <div class="nav-drop">
+                            <span class="brand_name">Chopard</span>
+                            <?php while($row = mysqli_fetch_assoc($resultjewel24)) { ?>
+                            <div class="child_categories">
+                                <a 
+                                href="bags.php?query=SELECT * FROM products WHERE GrandChild_Category = '<?php echo $row['Grandchild_Category']; ?>'"><?php echo $row['Grandchild_Category']; ?></a>
+                            </div> 
+                            <?php } ?> 
+                        </div>   
+
+                        <div class="nav-drop">
+                            <span class="brand_name">Chloe</span>
+                            <?php while($row = mysqli_fetch_assoc($resultjewel25)) { ?>
+                            <div class="child_categories">
+                                <a 
+                                href="bags.php?query=SELECT * FROM products WHERE GrandChild_Category = '<?php echo $row['Grandchild_Category']; ?>'"><?php echo $row['Grandchild_Category']; ?></a>
+                            </div> 
+                            <?php } ?> 
+                        </div>   
+
+                        <div class="nav-drop">
+                            <span class="brand_name">Chaumet</span>
+                            <?php while($row = mysqli_fetch_assoc($resultjewel26)) { ?>
+                            <div class="child_categories">
+                                <a 
+                                href="bags.php?query=SELECT * FROM products WHERE GrandChild_Category = '<?php echo $row['Grandchild_Category']; ?>'"><?php echo $row['Grandchild_Category']; ?></a>
+                            </div> 
+                            <?php } ?> 
+                        </div>   
+
+                         
+
+                        <div class="nav-drop">
+                            <span class="brand_name">Celine</span>
+                            <?php while($row = mysqli_fetch_assoc($resultjewel28)) { ?>
+                            <div class="child_categories">
+                                <a 
+                                href="bags.php?query=SELECT * FROM products WHERE GrandChild_Category = '<?php echo $row['Grandchild_Category']; ?>'"><?php echo $row['Grandchild_Category']; ?></a>
+                            </div> 
+                            <?php } ?> 
+                        </div>   
+
+                        <div class="nav-drop">
+                            <span class="brand_name">Cartier</span>
+                            <?php while($row = mysqli_fetch_assoc($resultjewel29)) { ?>
+                            <div class="child_categories">
+                                <a 
+                                href="bags.php?query=SELECT * FROM products WHERE GrandChild_Category = '<?php echo $row['Grandchild_Category']; ?>'"><?php echo $row['Grandchild_Category']; ?></a>
+                            </div> 
+                            <?php } ?> 
+                        </div>   
+  
+
+                        <div class="nav-drop">
+                            <span class="brand_name">Burberry</span>
+                            <?php while($row = mysqli_fetch_assoc($resultjewel31)) { ?>
+                            <div class="child_categories">
+                                <a 
+                                href="bags.php?query=SELECT * FROM products WHERE GrandChild_Category = '<?php echo $row['Grandchild_Category']; ?>'"><?php echo $row['Grandchild_Category']; ?></a>
+                            </div> 
+                            <?php } ?> 
+                        </div>   
+
+                        <div class="nav-drop">
+                            <span class="brand_name">Bottega Veneta</span>
+                            <?php while($row = mysqli_fetch_assoc($resultjewel32)) { ?>
+                            <div class="child_categories">
+                                <a 
+                                href="bags.php?query=SELECT * FROM products WHERE GrandChild_Category = '<?php echo $row['Grandchild_Category']; ?>'"><?php echo $row['Grandchild_Category']; ?></a>
+                            </div> 
+                            <?php } ?> 
+                        </div>   
+
+                        <div class="nav-drop">
+                            <span class="brand_name">Balenciaga</span>
+                            <?php while($row = mysqli_fetch_assoc($resultjewel33)) { ?>
+                            <div class="child_categories">
+                                <a 
+                                href="bags.php?query=SELECT * FROM products WHERE GrandChild_Category = '<?php echo $row['Grandchild_Category']; ?>'"><?php echo $row['Grandchild_Category']; ?></a>
+                            </div> 
+                            <?php } ?> 
+                        </div>   
+
+                        <div class="nav-drop">
+                            <span class="brand_name">APM</span>
+                            <?php while($row = mysqli_fetch_assoc($resultjewel34)) { ?>
+                            <div class="child_categories">
+                                <a 
+                                href="bags.php?query=SELECT * FROM products WHERE GrandChild_Category = '<?php echo $row['Grandchild_Category']; ?>'"><?php echo $row['Grandchild_Category']; ?></a>
+                            </div> 
+                            <?php } ?> 
+                        </div>   
+                        
+                        
+
+                    </div>
+            </div>
+
+            <div class="dropdown">
+                <span class="nav-link">SHOES  <i class="material-icons">&#xe313;</i></span>
                 <div class="dropdown-content">
-                    <!-- Sample content 1 -->
-                    <div class="nav-drop">
-                        <span class="brand_name">Botega</span>
-                        <div class="child_categories">
-                            <span class="child_category">Botega Jewelry</span>
-                            <span class="child_category">Botega Jewelry</span>
-                            <span class="child_category">Botega Jewelry</span>
-                            <span class="child_category">Botega Jewelry</span>
-                            <span class="child_category">Botega Jewelry</span>
-                        </div>   
-                    </div>
-
-                    <!-- Sample Content -->
-                     <!-- Sample content 1 -->
-                     <div class="nav-drop">
-                        <span class="brand_name">Botega</span>
-                        <div class="child_categories">
-                            <span class="child_category">Botega Jewelry</span>
-                            <span class="child_category">Botega Jewelry</span>
-                            <span class="child_category">Botega Jewelry</span>
-                            <span class="child_category">Botega Jewelry</span>
-                            <span class="child_category">Botega Jewelry</span>
-                        </div>   
-                    </div>
-
-                    <!-- Sample Content -->
-                     <!-- Sample content 1 -->
-                     <div class="nav-drop">
-                        <span class="brand_name">Botega</span>
-                        <div class="child_categories">
-                            <span class="child_category">Botega Jewelry</span>
-                            <span class="child_category">Botega Jewelry</span>
-                            <span class="child_category">Botega Jewelry</span>
-                            <span class="child_category">Botega Jewelry</span>
-                            <span class="child_category">Botega Jewelry</span>
-                        </div>   
-                    </div>
-
-                    <!-- Sample Content -->
-                     <!-- Sample content 1 -->
-                     <div class="nav-drop">
-                        <span class="brand_name">Botega</span>
-                        <div class="child_categories">
-                            <span class="child_category">Botega Jewelry</span>
-                            <span class="child_category">Botega Jewelry</span>
-                            <span class="child_category">Botega Jewelry</span>
-                            <span class="child_category">Botega Jewelry</span>
-                            <span class="child_category">Botega Jewelry</span>
-                        </div>   
-                    </div>
-
-                    <!-- Sample Content -->
-                     <!-- Sample content 1 -->
-                     <div class="nav-drop">
-                        <span class="brand_name">Botega</span>
-                        <div class="child_categories">
-                            <span class="child_category">Botega Jewelry</span>
-                            <span class="child_category">Botega Jewelry</span>
-                            <span class="child_category">Botega Jewelry</span>
-                            <span class="child_category">Botega Jewelry</span>
-                            <span class="child_category">Botega Jewelry</span>
-                        </div>   
-                    </div>
-
-                    <!-- Sample Content -->
-                     <!-- Sample content 1 -->
-                     <div class="nav-drop">
-                        <span class="brand_name">Botega</span>
-                        <div class="child_categories">
-                            <span class="child_category">Botega Jewelry</span>
-                            <span class="child_category">Botega Jewelry</span>
-                            <span class="child_category">Botega Jewelry</span>
-                            <span class="child_category">Botega Jewelry</span>
-                            <span class="child_category">Botega Jewelry</span>
-                        </div>   
-                    </div>
-
-                    <!-- Sample Content -->
-                     <!-- Sample content 1 -->
-                     <div class="nav-drop">
-                        <span class="brand_name">Botega</span>
-                        <div class="child_categories">
-                            <span class="child_category">Botega Jewelry</span>
-                            <span class="child_category">Botega Jewelry</span>
-                            <span class="child_category">Botega Jewelry</span>
-                            <span class="child_category">Botega Jewelry</span>
-                            <span class="child_category">Botega Jewelry</span>
-                        </div>   
-                    </div>
-
-                    <!-- Sample Content -->
-                    <!-- Sample content 1 -->
-                    <div class="nav-drop">
-                        <span class="brand_name">Botega</span>
-                        <div class="child_categories">
-                            <span class="child_category">Botega Jewelry</span>
-                            <span class="child_category">Botega Jewelry</span>
-                            <span class="child_category">Botega Jewelry</span>
-                            <span class="child_category">Botega Jewelry</span>
-                            <span class="child_category">Botega Jewelry</span>
-                        </div>   
-                    </div>
-                    <!-- Sample content 1 -->
-                    <div class="nav-drop">
-                        <span class="brand_name">Botega</span>
-                        <div class="child_categories">
-                            <span class="child_category">Botega Jewelry</span>
-                            <span class="child_category">Botega Jewelry</span>
-                            <span class="child_category">Botega Jewelry</span>
-                            <span class="child_category">Botega Jewelry</span>
-                            <span class="child_category">Botega Jewelry</span>
-                        </div>   
-                    </div>
-                    <!-- Sample content 1 -->
-                    <div class="nav-drop">
-                        <span class="brand_name">Botega</span>
-                        <div class="child_categories">
-                            <span class="child_category">Botega Jewelry</span>
-                            <span class="child_category">Botega Jewelry</span>
-                            <span class="child_category">Botega Jewelry</span>
-                            <span class="child_category">Botega Jewelry</span>
-                            <span class="child_category">Botega Jewelry</span>
-                        </div>   
-                    </div>
-                    <!-- Sample content 1 -->
-                    <div class="nav-drop">
-                        <span class="brand_name">Botega</span>
-                        <div class="child_categories">
-                            <span class="child_category">Botega Jewelry</span>
-                            <span class="child_category">Botega Jewelry</span>
-                            <span class="child_category">Botega Jewelry</span>
-                            <span class="child_category">Botega Jewelry</span>
-                            <span class="child_category">Botega Jewelry</span>
-                        </div>   
-                    </div>
-                    <!-- Sample content 1 -->
-                    <div class="nav-drop">
-                        <span class="brand_name">Botega</span>
-                        <div class="child_categories">
-                            <span class="child_category">Botega Jewelry</span>
-                            <span class="child_category">Botega Jewelry</span>
-                            <span class="child_category">Botega Jewelry</span>
-                            <span class="child_category">Botega Jewelry</span>
-                            <span class="child_category">Botega Jewelry</span>
-                        </div>   
-                    </div>
-                    <!-- Sample content 1 -->
-                    <div class="nav-drop">
-                        <span class="brand_name">Botega</span>
-                        <div class="child_categories">
-                            <span class="child_category">Botega Jewelry</span>
-                            <span class="child_category">Botega Jewelry</span>
-                            <span class="child_category">Botega Jewelry</span>
-                            <span class="child_category">Botega Jewelry</span>
-                            <span class="child_category">Botega Jewelry</span>
-                        </div>   
-                    </div>
-
+                    <span class="nav-drop"></span>
+                    <span class="nav-drop"></span>
+                    <span class="nav-drop"></span>
                 </div>
             </div>
             <div class="dropdown">
-                <span class="nav-link">SHOES</span>
-                <div class="dropdown-content">
-                    <span class="nav-drop"></span>
-                    <span class="nav-drop"></span>
-                    <span class="nav-drop"></span>
-                </div>
-            </div>
-            <div class="dropdown">
-                <span class="nav-link">WATCHES</span>
+                <span class="nav-link">WATCHES  <i class="material-icons">&#xe313;</i></span>
                 <div class="dropdown-content">
                     <span class="nav-drop"></span>
                     <span class="nav-drop"></span>

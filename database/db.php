@@ -14,5 +14,5 @@ if ($mysqli->connect_errno) {
 }
 
 // Connection successful
-echo 'Connected to MySQL';
+//echo 'Connected to MySQL';
 ?>
