@@ -25,30 +25,6 @@ $querybag21 ='SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name
 $querybag22 ='SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Boyy" AND Root_Category="Bags"';
 $querybag23 ='SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Bottega Veneta" AND Root_Category="Bags"';
 
-//Execute the Bags Queries 
-$resultbag1 = $mysqli->query($querybag1);
-$resultbag2 = $mysqli->query($querybag2);
-$resultbag3 = $mysqli->query($querybag3);
-$resultbag4 = $mysqli->query($querybag4);
-$resultbag5 = $mysqli->query($querybag5);
-$resultbag6 = $mysqli->query($querybag6);
-$resultbag7 = $mysqli->query($querybag7);
-$resultbag8 = $mysqli->query($querybag8);
-$resultbag9 = $mysqli->query($querybag9);
-$resultbag10 = $mysqli->query($querybag10);
-$resultbag11 = $mysqli->query($querybag11);
-$resultbag12 = $mysqli->query($querybag12);
-$resultbag13 = $mysqli->query($querybag13);
-$resultbag14 = $mysqli->query($querybag14);
-$resultbag15 = $mysqli->query($querybag15);
-$resultbag16 = $mysqli->query($querybag16);
-$resultbag17 = $mysqli->query($querybag17);
-$resultbag18 = $mysqli->query($querybag18);
-$resultbag19 = $mysqli->query($querybag19);
-$resultbag20 = $mysqli->query($querybag20);
-$resultbag21 = $mysqli->query($querybag21);
-$resultbag22 = $mysqli->query($querybag22);
-$resultbag23 = $mysqli->query($querybag23);
 
 // Queries for Products whose Root Category is Jewelry
 
@@ -87,41 +63,6 @@ $queryjewl32 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Na
 $queryjewl33 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Balenciaga" AND Root_Category="Jewelry"';
 $queryjewl34 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "APM" AND Root_Category="Jewelry"';
 
-//Execute the Jewelry Queries 
-$resultjewel1 = $mysqli->query($queryjewl1);
-$resultjewel2 = $mysqli->query($queryjewl2);
-$resultjewel3 = $mysqli->query($queryjewl3);
-$resultjewel4 = $mysqli->query($queryjewl4);
-$resultjewel5 = $mysqli->query($queryjewl5);
-$resultjewel6 = $mysqli->query($queryjewl6);
-$resultjewel7 = $mysqli->query($queryjewl7);
-$resultjewel8 = $mysqli->query($queryjewl8);
-$resultjewel9 = $mysqli->query($queryjewl9);
-$resultjewel10 = $mysqli->query($queryjewl10);
-$resultjewel11 = $mysqli->query($queryjewl11);
-$resultjewel12 = $mysqli->query($queryjewl12);
-$resultjewel13 = $mysqli->query($queryjewl13);
-$resultjewel14 = $mysqli->query($queryjewl14);
-$resultjewel15 = $mysqli->query($queryjewl15);
-$resultjewel16 = $mysqli->query($queryjewl16);
-$resultjewel17 = $mysqli->query($queryjewl17);
-$resultjewel18 = $mysqli->query($queryjewl18);
-$resultjewel19 = $mysqli->query($queryjewl19);
-$resultjewel20 = $mysqli->query($queryjewl20);
-$resultjewel21 = $mysqli->query($queryjewl21);
-$resultjewel22 = $mysqli->query($queryjewl22);
-$resultjewel23 = $mysqli->query($queryjewl23);
-$resultjewel24 = $mysqli->query($queryjewl24);
-$resultjewel25 = $mysqli->query($queryjewl25);
-$resultjewel26 = $mysqli->query($queryjewl26);
-$resultjewel27 = $mysqli->query($queryjewl27);
-$resultjewel28 = $mysqli->query($queryjewl28);
-$resultjewel29 = $mysqli->query($queryjewl29);
-$resultjewel30 = $mysqli->query($queryjewl30);
-$resultjewel31 = $mysqli->query($queryjewl31);
-$resultjewel32 = $mysqli->query($queryjewl32);
-$resultjewel33 = $mysqli->query($queryjewl33);
-$resultjewel34 = $mysqli->query($queryjewl34);
 
 // Queries for Products whose Root Category is Shoes
 $queryshoe1 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Yves Saint Laurent" AND Root_Category="Shoes"';
@@ -165,48 +106,6 @@ $queryshoe38 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Na
 $queryshoe39 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Amina Muaddi" AND Root_Category="Shoes"';
 $queryshoe40 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Alexander Wang" AND Root_Category="Shoes"';
 
-//Execute the Shoe Queries 
-$resultshoe1 = $mysqli->query($queryshoe1);
-$resultshoe2 = $mysqli->query($queryshoe2);
-$resultshoe3 = $mysqli->query($queryshoe3);
-$resultshoe4 = $mysqli->query($queryshoe4);
-$resultshoe5 = $mysqli->query($queryshoe5);
-$resultshoe6 = $mysqli->query($queryshoe6);
-$resultshoe7 = $mysqli->query($queryshoe7);
-$resultshoe8 = $mysqli->query($queryshoe8);
-$resultshoe9 = $mysqli->query($queryshoe9);
-$resultshoe10 = $mysqli->query($queryshoe10);
-$resultshoe11 = $mysqli->query($queryshoe11);
-$resultshoe12 = $mysqli->query($queryshoe12);
-$resultshoe13 = $mysqli->query($queryshoe13);
-$resultshoe14 = $mysqli->query($queryshoe14);
-$resultshoe15 = $mysqli->query($queryshoe15);
-$resultshoe16 = $mysqli->query($queryshoe16);
-$resultshoe17 = $mysqli->query($queryshoe17);
-$resultshoe18 = $mysqli->query($queryshoe18);
-$resultshoe19 = $mysqli->query($queryshoe19);
-$resultshoe20 = $mysqli->query($queryshoe20);
-$resultshoe21 = $mysqli->query($queryshoe21);
-$resultshoe22 = $mysqli->query($queryshoe22);
-$resultshoe23 = $mysqli->query($queryshoe23);
-$resultshoe24 = $mysqli->query($queryshoe24);
-$resultshoe25 = $mysqli->query($queryshoe25);
-$resultshoe26 = $mysqli->query($queryshoe26);
-$resultshoe27 = $mysqli->query($queryshoe27);
-$resultshoe28 = $mysqli->query($queryshoe28);
-$resultshoe29 = $mysqli->query($queryshoe29);
-$resultshoe30 = $mysqli->query($queryshoe30);
-$resultshoe31 = $mysqli->query($queryshoe31);
-$resultshoe32 = $mysqli->query($queryshoe32);
-$resultshoe33 = $mysqli->query($queryshoe33);
-$resultshoe34 = $mysqli->query($queryshoe34);
-$resultshoe35 = $mysqli->query($queryshoe35);
-$resultshoe36 = $mysqli->query($queryshoe36);
-$resultshoe37 = $mysqli->query($queryshoe37);
-$resultshoe38 = $mysqli->query($queryshoe38);
-$resultshoe39 = $mysqli->query($queryshoe39);
-$resultshoe40 = $mysqli->query($queryshoe40);
-
 // Queries for Products whose Root Category is Watches
 $querywatch1 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Versace" AND Root_Category="Watches"';
 $querywatch2 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Van Cleef & Arpels" AND Root_Category="Watches"';
@@ -249,6 +148,113 @@ $querywatch38 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_N
 $querywatch39 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Bell & Ross" AND Root_Category="Watches"';
 $querywatch40 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Audemars Piguet" AND Root_Category="Watches"';
 $querywatch41 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Armani" AND Root_Category="Watches"';
+
+
+//Execute the Bags Queries 
+$resultbag1 = $mysqli->query($querybag1);
+$resultbag2 = $mysqli->query($querybag2);
+$resultbag3 = $mysqli->query($querybag3);
+$resultbag4 = $mysqli->query($querybag4);
+$resultbag5 = $mysqli->query($querybag5);
+$resultbag6 = $mysqli->query($querybag6);
+$resultbag7 = $mysqli->query($querybag7);
+$resultbag8 = $mysqli->query($querybag8);
+$resultbag9 = $mysqli->query($querybag9);
+$resultbag10 = $mysqli->query($querybag10);
+$resultbag11 = $mysqli->query($querybag11);
+$resultbag12 = $mysqli->query($querybag12);
+$resultbag13 = $mysqli->query($querybag13);
+$resultbag14 = $mysqli->query($querybag14);
+$resultbag15 = $mysqli->query($querybag15);
+$resultbag16 = $mysqli->query($querybag16);
+$resultbag17 = $mysqli->query($querybag17);
+$resultbag18 = $mysqli->query($querybag18);
+$resultbag19 = $mysqli->query($querybag19);
+$resultbag20 = $mysqli->query($querybag20);
+$resultbag21 = $mysqli->query($querybag21);
+$resultbag22 = $mysqli->query($querybag22);
+$resultbag23 = $mysqli->query($querybag23);
+
+
+//Execute the Jewelry Queries 
+$resultjewel1 = $mysqli->query($queryjewl1);
+$resultjewel2 = $mysqli->query($queryjewl2);
+$resultjewel3 = $mysqli->query($queryjewl3);
+$resultjewel4 = $mysqli->query($queryjewl4);
+$resultjewel5 = $mysqli->query($queryjewl5);
+$resultjewel6 = $mysqli->query($queryjewl6);
+$resultjewel7 = $mysqli->query($queryjewl7);
+$resultjewel8 = $mysqli->query($queryjewl8);
+$resultjewel9 = $mysqli->query($queryjewl9);
+$resultjewel10 = $mysqli->query($queryjewl10);
+$resultjewel11 = $mysqli->query($queryjewl11);
+$resultjewel12 = $mysqli->query($queryjewl12);
+$resultjewel13 = $mysqli->query($queryjewl13);
+$resultjewel14 = $mysqli->query($queryjewl14);
+$resultjewel15 = $mysqli->query($queryjewl15);
+$resultjewel16 = $mysqli->query($queryjewl16);
+$resultjewel17 = $mysqli->query($queryjewl17);
+$resultjewel18 = $mysqli->query($queryjewl18);
+$resultjewel19 = $mysqli->query($queryjewl19);
+$resultjewel20 = $mysqli->query($queryjewl20);
+$resultjewel21 = $mysqli->query($queryjewl21);
+$resultjewel22 = $mysqli->query($queryjewl22);
+$resultjewel23 = $mysqli->query($queryjewl23);
+$resultjewel24 = $mysqli->query($queryjewl24);
+$resultjewel25 = $mysqli->query($queryjewl25);
+$resultjewel26 = $mysqli->query($queryjewl26);
+$resultjewel27 = $mysqli->query($queryjewl27);
+$resultjewel28 = $mysqli->query($queryjewl28);
+$resultjewel29 = $mysqli->query($queryjewl29);
+$resultjewel30 = $mysqli->query($queryjewl30);
+$resultjewel31 = $mysqli->query($queryjewl31);
+$resultjewel32 = $mysqli->query($queryjewl32);
+$resultjewel33 = $mysqli->query($queryjewl33);
+$resultjewel34 = $mysqli->query($queryjewl34);
+
+
+//Execute the Shoe Queries 
+$resultshoe1 = $mysqli->query($queryshoe1);
+$resultshoe2 = $mysqli->query($queryshoe2);
+$resultshoe3 = $mysqli->query($queryshoe3);
+$resultshoe4 = $mysqli->query($queryshoe4);
+$resultshoe5 = $mysqli->query($queryshoe5);
+$resultshoe6 = $mysqli->query($queryshoe6);
+$resultshoe7 = $mysqli->query($queryshoe7);
+$resultshoe8 = $mysqli->query($queryshoe8);
+$resultshoe9 = $mysqli->query($queryshoe9);
+$resultshoe10 = $mysqli->query($queryshoe10);
+$resultshoe11 = $mysqli->query($queryshoe11);
+$resultshoe12 = $mysqli->query($queryshoe12);
+$resultshoe13 = $mysqli->query($queryshoe13);
+$resultshoe14 = $mysqli->query($queryshoe14);
+$resultshoe15 = $mysqli->query($queryshoe15);
+$resultshoe16 = $mysqli->query($queryshoe16);
+$resultshoe17 = $mysqli->query($queryshoe17);
+$resultshoe18 = $mysqli->query($queryshoe18);
+$resultshoe19 = $mysqli->query($queryshoe19);
+$resultshoe20 = $mysqli->query($queryshoe20);
+$resultshoe21 = $mysqli->query($queryshoe21);
+$resultshoe22 = $mysqli->query($queryshoe22);
+$resultshoe23 = $mysqli->query($queryshoe23);
+$resultshoe24 = $mysqli->query($queryshoe24);
+$resultshoe25 = $mysqli->query($queryshoe25);
+$resultshoe26 = $mysqli->query($queryshoe26);
+$resultshoe27 = $mysqli->query($queryshoe27);
+$resultshoe28 = $mysqli->query($queryshoe28);
+$resultshoe29 = $mysqli->query($queryshoe29);
+$resultshoe30 = $mysqli->query($queryshoe30);
+$resultshoe31 = $mysqli->query($queryshoe31);
+$resultshoe32 = $mysqli->query($queryshoe32);
+$resultshoe33 = $mysqli->query($queryshoe33);
+$resultshoe34 = $mysqli->query($queryshoe34);
+$resultshoe35 = $mysqli->query($queryshoe35);
+$resultshoe36 = $mysqli->query($queryshoe36);
+$resultshoe37 = $mysqli->query($queryshoe37);
+$resultshoe38 = $mysqli->query($queryshoe38);
+$resultshoe39 = $mysqli->query($queryshoe39);
+$resultshoe40 = $mysqli->query($queryshoe40);
+
 
 //Execute the Watch Queries 
 $resultswatch1 = $mysqli->query($querywatch1);

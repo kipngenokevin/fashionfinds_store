@@ -1,4 +1,8 @@
-
+* 
+a {
+    color: #000;
+    text-decoration: none;
+} 
 body {
     font-family: 'Raleway', sans-serif;
     margin: 0px 0px;
@@ -26,11 +30,25 @@ header {
     left: 0;
     right: 0;
     margin: auto;
+    padding: 0;
     /*outline: 2px solid green;*/
-    font-size: 18px;
+    font-size: 12px;
     font-weight: 700;
     padding: 12px;
     
+}
+.top-banner {
+    text-align: center;
+    width: 100%;
+    margin: 0;
+    background-color: #757575;
+    color: #fff;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .logo {
     /*outline: 2px solid yellow;*/
@@ -52,7 +70,6 @@ header {
 }
 .nav-link {
     cursor: pointer;
-    font-size: medium;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -161,7 +178,7 @@ header {
 
 .nav-drop a {
     color: gray;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 600;
     /*outline: 2px solid green;*/
 }
@@ -413,6 +430,38 @@ footer a {
     border: 1px solid;
     border-radius: 5px;
 }
+/*======== ITEM VIEW ==========*/
+.item-container {
+    left: 0;
+    right: 0;
+    width: 80%;
+    outline: 2px solid red;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+.item {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+.item-image {
+    flex: 1;
+    width: 50%;
+}
+.item-image img {
+    width: 100%;
+}
+.item-description {
+    flex: 1;
+}
+.social-links {
+    display: flex;
+    gap: 2rem;
+    font-size: 24px;
+}
 
 
 
@@ -513,9 +562,29 @@ footer a {
          max-width: 150px;
       }
 
+      
+
       .subscribe {
         text-align: center;
         }
+        .item-container {
+            display: flex;
+            
+            width: 100%;
+        }
+        .item {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+        .item-image {
+            
+        }
+        .item-description {
+            
+        }
+        
       
 
 /*========== EEND OF HOMEPAGE SECTION =====*/

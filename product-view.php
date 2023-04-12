@@ -1,11 +1,15 @@
 <?php
+
 // Include the database connector
 require_once('database/db.php');
+$query = $_GET['query'];
+echo $query;
+$result = $mysqli->query($query);
 
 include('database/queries.php');
 
-//Queries for Products whose Root Category is Jewelry
 
+//Queries for Products whose Root Category is Jewelry
 
 ?>
 
@@ -17,6 +21,7 @@ include('database/queries.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap-reboot.min.css" />
     <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -31,7 +36,6 @@ include('database/queries.php');
 
     <title>Fashion Finds Online Store</title>
 </head>
-
 <body>
     <div class="top-banner">
         <p>"We do not just deliver a product, We deliver an experience!" </p>
@@ -43,8 +47,7 @@ include('database/queries.php');
 
         </div>
         <nav class="nav">
-            <span class="nav-link">HOME</span>
-
+        <span class="nav-link"><a href=".">HOME</a></span>
 
             <div class="dropdown">
             <span class="nav-link">BAGS <i class="material-icons">&#xe313;</i></span>
@@ -1792,236 +1795,81 @@ include('database/queries.php');
             </div>
         </nav>
     </header>
-
-    <!-- Slider Element -->
-    <div class="slideshow">
-
-        <div class="slideshow-container">
-            <div class="slide">
-                <img src="img/img1.jpg" alt="Slide 1">
-                <div class="slide-text">
-                    <h2>Payment Made Easy</h2>
-                    <p>Purchase our products from the comfort of your home</p>
-                    <button class="slide-button">Buy Now</button>
-                </div>
+    <?php while($row = mysqli_fetch_assoc($result)) { ?>
+    <section class="item-container">
+        <div class="item">
+            <div class="item-image">
+                <img src="<?php echo $row["Thumbnail"]; ?>" alt=""/>
             </div>
-            <div class="slide">
-                <img src="img/img2.jpg" alt="Slide 2">
-                <div class="slide-text">
-                    <h2>High Quality</h2>
-                    <p>Exceptional, stylish and affordable</p>
-                    <button class="slide-button">Buy Now</button>
-                </div>
-            </div>
-            <div class="slide">
-                <img src="img/slide3.jpg" alt="Slide 3">
-                <div class="slide-text">
-                    <h2>Discounted Prices</h2>
-                    <p>Find your favorites at a considerably affordable prices</p>
-                    <button class="slide-button">Buy Now</button>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    <!-- BODY ELEMENT -->
-
-    <div class="body-element">
-
-        <!-- LIVE SLIDESHOW ELEMENT-->
-
-
-        <div class="body-section">
-
-            <!-- FEATURED PRODUCTS SECTION -->
-            <h2>Featured Products</h2>
-            <div class="featured-products">
-
-                <div class="product-container">
-                    <img src="https://cdn11.bigcommerce.com/s-u1vaaqdywl/images/stencil/320w/products/21654/22156/wsxc1678985496200_0__45508.1678975570.jpg?c=1"
-                        alt="Product Image" />
-                    <div class="item-description">
-                        <span class="brand-name">Chanel</span>
-                        <p class="product-name">Chanel 23C Camellia Quilted Denim Heart Crush Small Classic Flap</p>
-                        <div class="prices">
-                            <span class="price">USD 500</span>
-                            <span class="sale-price">USD 210</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="product-container">
-                    <img src="https://cdn11.bigcommerce.com/s-u1vaaqdywl/images/stencil/320w/products/3639/3971/bvjo35lawi__61921.1678294825.jpg?c=1"
-                        alt="Product Image" />
-                    <div class="item-description">
-                        <span class="brand-name">Chanel</span>
-                        <p class="product-name">Chanel 23C Camellia Quilted Denim Heart Crush Small Classic Flap</p>
-                        <div class="prices">
-                            <span class="price">USD 500</span>
-                            <span class="sale-price">USD 210</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="product-container">
-                    <img src="https://cdn11.bigcommerce.com/s-u1vaaqdywl/images/stencil/320w/products/3639/3971/bvjo35lawi__61921.1678294825.jpg?c=1"
-                        alt="Product Image" />
-                    <div class="item-description">
-                        <span class="brand-name">Chanel</span>
-                        <p class="product-name">Chanel 23C Camellia Quilted Denim Heart Crush Small Classic Flap</p>
-                        <div class="prices">
-                            <span class="price">USD 500</span>
-                            <span class="sale-price">USD 210</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- MOST POPULAR PRODUCTS SECTION -->
-            <h2>Popular Products</h2>
-            <div class="featured-products">
-                <div class="product-container">
-                    <img src="https://cdn11.bigcommerce.com/s-u1vaaqdywl/images/stencil/320w/products/21654/22156/wsxc1678985496200_0__45508.1678975570.jpg?c=1"
-                        alt="Product Image" />
-                    <div class="item-description">
-                        <span class="brand-name">Chanel</span>
-                        <p class="product-name">Chanel 23C Camellia Quilted Denim Heart Crush Small Classic Flap</p>
-                        <div class="prices">
-                            <span class="price">USD 500</span>
-                            <span class="sale-price">USD 210</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="product-container">
-                    <img src="https://cdn11.bigcommerce.com/s-u1vaaqdywl/images/stencil/320w/products/21654/22156/wsxc1678985496200_0__45508.1678975570.jpg?c=1"
-                        alt="Product Image" />
-                    <div class="item-description">
-                        <span class="brand-name">Chanel</span>
-                        <p class="product-name">Chanel 23C Camellia Quilted Denim Heart Crush Small Classic Flap</p>
-                        <div class="prices">
-                            <span class="price">USD 500</span>
-                            <span class="sale-price">USD 210</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- NEW PRODUCTS SECTION -->
-            <h2>New Products</h2>
-            <div class="featured-products">
-                <div class="product-container">
-                    <img src="https://cdn11.bigcommerce.com/s-u1vaaqdywl/images/stencil/320w/products/21654/22156/wsxc1678985496200_0__45508.1678975570.jpg?c=1"
-                        alt="Product Image" />
-                    <div class="item-description">
-                        <span class="brand-name">Chanel</span>
-                        <p class="product-name">Chanel 23C Camellia Quilted Denim Heart Crush Small Classic Flap</p>
-                        <div class="prices">
-                            <span class="price">USD 500</span>
-                            <span class="sale-price">USD 210</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="product-container">
-                    <img src="https://cdn11.bigcommerce.com/s-u1vaaqdywl/images/stencil/320w/products/21654/22156/wsxc1678985496200_0__45508.1678975570.jpg?c=1"
-                        alt="Product Image" />
-                    <div class="item-description">
-                        <span class="brand-name">Chanel</span>
-                        <p class="product-name">Chanel 23C Camellia Quilted Denim Heart Crush Small Classic Flap</p>
-                        <div class="prices">
-                            <span class="price">USD 500</span>
-                            <span class="sale-price">USD 210</span>
-                        </div>
-                    </div>
+            <div class="item-description">
+                <h2><?php echo $row["Product_Name"]; ?></h2>
+                <h3><?php echo $row["Brand_Name"]; ?></h3>
+                <p><?php echo $row["Product_Description"]; ?></p>
+                <p><?php echo $row["Sale_Price"]; ?></p>
+                <p><?php echo $row["Price"]; ?></p>
+                <span>Review</span>
+                <hr>
+                <p>Quantity</p>
+                <button>Add To Cart</button>
+                <div class="social-links">
+                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="#" class="fa fa-twitter"></a>
+                    <a href="#" class="fa fa-instagram"></a>
+                    <a href="#" class="fa fa-whatsapp"></a>
                 </div>
 
             </div>
-
-            <!-- CONTACT US BANNER -->
-
-            <div class="contact-us-banner">
-                <!--<img src="https://images.pexels.com/photos/414660/pexels-photo-414660.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Contact us"/>-->
-                <div class="contact-us-text">
-                    <h2>Can't find what you are looking for?</h2>
-                    <p>We update our catalogue regularly. Whether it is new products,
-                        or more photos...Please don't hesitate to contact us with your inquiries. </p>
-                    </p>
-                    <button class="slide-button"> Contact Us</button>
-
-                </div>
-
-            </div>
-
-
         </div>
+    </section>
+    <?php } ?>
 
-
-    </div>
-
-    <!-- FOOTER ELEMENT -->
     <footer>
-        <div class="navigate">
-            <h3>Navigate</h3>
-            <a href="">Payment</a>
-            <a href="">Pages</a>
-            <a href="">Contact Us</a>
-        </div>
-
-        <div class="categories">
-            <h3>Categories</h3>
-            <a href="">Bags</a>
-            <a href="">Jewelry</a>
-            <a href="">Shoes</a>
-            <a href="">Watches</a>
-        </div>
-
-        <div class="popular-brands">
-            <a href="">Chanel</a>
-            <a href="">Valentino</a>
-            <a href="">Christian Dior</a>
-            <a href="">Cartier</a>
-            <a href="">Longines</a>
-            <a href="">Hermes</a>
-            <a href="">Prada</a>
-            <a href="">Bvlgari</a>
-            <a href="">Rolex</a>
-
-        </div>
-        <div class="info">
-            <span><i>Paris, France</i></span>
-
-
-        </div>
-        <div class="subscribe">
-            <span>Subscribe To Our Newsletter</span>
-            <span>Get the latest updates on new products and upcoming sales</span>
-            <div class="subscribe-email">
-                <input id="email-address" type="email" />
-                <button class="slide-button">Subscribe</button>
-
+            <div class="navigate">
+                <h3>Navigate</h3>
+                <a href="">Payment</a>
+                <a href="">Pages</a>
+                <a href="">Contact Us</a>
             </div>
 
+            <div class="categories">
+                <h3>Categories</h3>
+                <a href="">Bags</a>
+                <a href="">Jewelry</a>
+                <a href="">Shoes</a>
+                <a href="">Watches</a>  
+            </div>
 
-        </div>
+            <div class="popular-brands">
+                <a href="">Chanel</a>
+                <a href="">Valentino</a>
+                <a href="">Christian Dior</a>
+                <a href="">Cartier</a>
+                <a href="">Longines</a>
+                <a href="">Hermes</a>
+                <a href="">Prada</a>
+                <a href="">Bvlgari</a>
+                <a href="">Rolex</a>            
+
+            </div>
+            <div class="info">
+                <span><i>Paris, France</i></span>
+                
+
+            </div>
+            <div class="subscribe">
+                <span>Subscribe To Our Newsletter</span>
+                <span>Get the latest updates on new products and upcoming sales</span>
+                <div class="subscribe-email">
+                    <input id="email-address" type="email" />
+                    <button class="slide-button">Subscribe</button>
+
+                </div>
+                
+
+            </div>
 
     </footer>
 
 
 
-    <!-- Javascript Code For Slideshow-->
-
-    <script>
-        const slides = document.querySelectorAll(".slide");
-
-        let index = 0;
-        setInterval(() => {
-            slides[index].classList.remove("active");
-            index = (index + 1) % slides.length;
-            slides[index].classList.add("active");
-        }, 12000);
-
-
-    </script>
-
-
 </body>
-
-</html>
