@@ -3,6 +3,12 @@
 require_once('database/db.php');
 
 include('database/queries.php');
+session_start();
+
+if (!isset($_SESSION["cart"])) {
+    // If the cart doesn't exist, create an empty array
+    $_SESSION["cart"] = array();
+}
 
 //Queries for Products whose Root Category is Jewelry
 
@@ -49,6 +55,7 @@ include('database/queries.php');
             <div class="dropdown">
             <span class="nav-link">BAGS <i class="material-icons">&#xe313;</i></span>
                 <div class="dropdown-content">
+
                     <div class="nav-drop">
                         <span class="brand_name">Yves Saint Laurent</span>
                         <?php while($row = mysqli_fetch_assoc($resultbag1)) { ?>
@@ -1771,22 +1778,20 @@ include('database/queries.php');
                     <button class="search-button">SEARCH</button>
                 </form>
                 <div class="cart">
-                    <img src="img/cart.png" class="cart-icon" width="35" height="35" />
-                    <span class="cart-counter">1</span>
-                    <div class="cart-items">
-                        <div class="item">
-                            <img src="img/icons8-bag-48.png" alt="product" />
-                            <span>Chanel Classic Handbag ajdoijoiajfoakpoa kfposkfmfamoai</span>
-                            <span>Price</span>
-                            <img src="img/icons8-trash-can-24.png" width="24">
+                    
+                        <img src="img/cart.png" class="cart-icon" width="35" height="35" />
+                        <span class="cart-counter">1</span>
+                        <div class="cart-items">
+                        <?php foreach ($_SESSION["cart"] as $item): ?>
+                            <div class="item">
+                                <img src="<?php echo $item["image"]; ?>" alt="product" class="img-responsive" width="80px"/>
+                                <span><?php echo $item["name"]; ?></span>
+                                <span><?php echo $item["price"]; ?></span>
+                                <img src="img/icons8-trash-can-24.png" width="24">
+                            </div>
+                        <?php endforeach; ?>
                         </div>
-                        <div class="item">
-                            <img src="img/icons8-bag-48.png" alt="product" />
-                            <span>Chanel Classic Handbag</span>
-                            <span>Price</span>
-                            <img src="img/icons8-trash-can-24.png" width="24">
-                        </div>
-                    </div>
+                    
                 </div>
 
             </div>
