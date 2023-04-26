@@ -12,6 +12,9 @@
     //}
 
 
+
+
+
   
 ?>
 <!DOCTYPE html>
@@ -48,6 +51,7 @@
                                 <th>Name</th>
                                 <th>Quantity</th>
                                 <th>Price</th>
+                                <th>Remove</th>
                             </tr>
                             <?php foreach ($_SESSION["cart"] as $item): ?>
                             <tr>
@@ -55,6 +59,14 @@
                                 <td class="table-data"><?php echo $item["name"]; ?></td>
                                 <td class="table-data"><?php echo $item["quantity"]; ?></td>
                                 <td class="table-data"><?php echo $item["price"]; ?></td>
+
+                                <!-- Example usage in HTML -->
+                                <td>
+                                <form method="post" action="remove-from-cart.php">
+                                    <input type="hidden" name="remove_index" value="0">
+                                    <button  class="checkout-section-button" type="submit">Remove from cart</button>
+                                </form>
+                                </td>
                             </tr>
                             <?php endforeach; ?>
                         </table>

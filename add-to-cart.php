@@ -7,8 +7,8 @@
         addToCart();
 
        // Redirect to the cart page
-        header("Location: cart.php");
-        exit;
+       header("Location: cart.php"); // Redirect to home page if not set
+       exit;
     
     // Function to add items to the cart
         // Function to add items to the cart
@@ -51,6 +51,8 @@
             }
             // Add the product to the cart
             array_push($_SESSION["cart"], $product);
+            $num_items = count($_SESSION["cart"]);
+            echo '<script>alert("Item added to cart!");</script>';
         } 
     }
 

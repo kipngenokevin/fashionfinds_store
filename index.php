@@ -10,6 +10,12 @@ if (!isset($_SESSION["cart"])) {
     $_SESSION["cart"] = array();
 }
 
+if (isset($_SESSION["cart"])) {
+    // Get the number of items in the cart
+    $num_items = count($_SESSION["cart"]);
+} else {
+    $num_items = 0;
+}
 //Queries for Products whose Root Category is Jewelry
 
 
@@ -1780,14 +1786,17 @@ if (!isset($_SESSION["cart"])) {
                 <div class="cart">
                     
                         <img src="img/cart.png" class="cart-icon" width="35" height="35" />
-                        <span class="cart-counter">1</span>
+                        <span class="cart-counter"><?php echo $num_items; ?></span>
                         <div class="cart-items">
                         <?php foreach ($_SESSION["cart"] as $item): ?>
                             <div class="item">
                                 <img src="<?php echo $item["image"]; ?>" alt="product" class="img-responsive" width="80px"/>
                                 <span><?php echo $item["name"]; ?></span>
                                 <span><?php echo $item["price"]; ?></span>
-                                <img src="img/icons8-trash-can-24.png" width="24">
+                                <form method="post" action="remove-from-cart.php">
+                                    <input type="hidden" name="remove_index" value="0">
+                                    <button style="border:none;" type="submit"><img src="img/icons8-trash-can-24.png" width="24"></button>
+                                </form>
                             </div>
                         <?php endforeach; ?>
                         </div>
@@ -1843,100 +1852,66 @@ if (!isset($_SESSION["cart"])) {
             <h2>Featured Products</h2>
             <div class="featured-products">
 
-                <div class="product-container">
-                    <img src="https://cdn11.bigcommerce.com/s-u1vaaqdywl/images/stencil/320w/products/21654/22156/wsxc1678985496200_0__45508.1678975570.jpg?c=1"
-                        alt="Product Image" />
-                    <div class="item-description">
-                        <span class="brand-name">Chanel</span>
-                        <p class="product-name">Chanel 23C Camellia Quilted Denim Heart Crush Small Classic Flap</p>
-                        <div class="prices">
-                            <span class="price">USD 500</span>
-                            <span class="sale-price">USD 210</span>
+                <?php while($row = mysqli_fetch_assoc($result)) { ?>
+                        <div class="product-container">
+                            <a href="product-view.php?query=SELECT * FROM products WHERE Product_Name = '<?php echo $row['Product_Name']; ?>'">
+                            <img src="<?php echo $row["Thumbnail"]; ?>" alt="Product Image"/>
+                            <div class="item-description">
+                                <span class="brand-name"><?php echo $row["Brand_Name"]; ?></span>
+                                <p class="product-name"><?php echo $row["Product_Name"]; ?></p>
+                                <div class="prices">
+                                    <span class="price"><?php echo $row["Price"]; ?></span>
+                                    <span class="sale-price"><?php echo $row["Sale_Price"]; ?></span>
+                                </div>
+                            </div>
+                            </a>
                         </div>
-                    </div>
-                </div>
-                <div class="product-container">
-                    <img src="https://cdn11.bigcommerce.com/s-u1vaaqdywl/images/stencil/320w/products/3639/3971/bvjo35lawi__61921.1678294825.jpg?c=1"
-                        alt="Product Image" />
-                    <div class="item-description">
-                        <span class="brand-name">Chanel</span>
-                        <p class="product-name">Chanel 23C Camellia Quilted Denim Heart Crush Small Classic Flap</p>
-                        <div class="prices">
-                            <span class="price">USD 500</span>
-                            <span class="sale-price">USD 210</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="product-container">
-                    <img src="https://cdn11.bigcommerce.com/s-u1vaaqdywl/images/stencil/320w/products/3639/3971/bvjo35lawi__61921.1678294825.jpg?c=1"
-                        alt="Product Image" />
-                    <div class="item-description">
-                        <span class="brand-name">Chanel</span>
-                        <p class="product-name">Chanel 23C Camellia Quilted Denim Heart Crush Small Classic Flap</p>
-                        <div class="prices">
-                            <span class="price">USD 500</span>
-                            <span class="sale-price">USD 210</span>
-                        </div>
-                    </div>
-                </div>
+                <?php } ?>
+
             </div>
 
             <!-- MOST POPULAR PRODUCTS SECTION -->
             <h2>Popular Products</h2>
             <div class="featured-products">
-                <div class="product-container">
-                    <img src="https://cdn11.bigcommerce.com/s-u1vaaqdywl/images/stencil/320w/products/21654/22156/wsxc1678985496200_0__45508.1678975570.jpg?c=1"
-                        alt="Product Image" />
-                    <div class="item-description">
-                        <span class="brand-name">Chanel</span>
-                        <p class="product-name">Chanel 23C Camellia Quilted Denim Heart Crush Small Classic Flap</p>
-                        <div class="prices">
-                            <span class="price">USD 500</span>
-                            <span class="sale-price">USD 210</span>
+
+                <?php while($row = mysqli_fetch_assoc($result1)) { ?>
+                        <div class="product-container">
+                            <a href="product-view.php?query=SELECT * FROM products WHERE Product_Name = '<?php echo $row['Product_Name']; ?>'">
+                            <img src="<?php echo $row["Thumbnail"]; ?>" alt="Product Image"/>
+                            <div class="item-description">
+                                <span class="brand-name"><?php echo $row["Brand_Name"]; ?></span>
+                                <p class="product-name"><?php echo $row["Product_Name"]; ?></p>
+                                <div class="prices">
+                                    <span class="price"><?php echo $row["Price"]; ?></span>
+                                    <span class="sale-price"><?php echo $row["Sale_Price"]; ?></span>
+                                </div>
+                            </div>
+                            </a>
                         </div>
-                    </div>
-                </div>
-                <div class="product-container">
-                    <img src="https://cdn11.bigcommerce.com/s-u1vaaqdywl/images/stencil/320w/products/21654/22156/wsxc1678985496200_0__45508.1678975570.jpg?c=1"
-                        alt="Product Image" />
-                    <div class="item-description">
-                        <span class="brand-name">Chanel</span>
-                        <p class="product-name">Chanel 23C Camellia Quilted Denim Heart Crush Small Classic Flap</p>
-                        <div class="prices">
-                            <span class="price">USD 500</span>
-                            <span class="sale-price">USD 210</span>
-                        </div>
-                    </div>
-                </div>
+                <?php } ?>
+                
             </div>
 
             <!-- NEW PRODUCTS SECTION -->
             <h2>New Products</h2>
             <div class="featured-products">
-                <div class="product-container">
-                    <img src="https://cdn11.bigcommerce.com/s-u1vaaqdywl/images/stencil/320w/products/21654/22156/wsxc1678985496200_0__45508.1678975570.jpg?c=1"
-                        alt="Product Image" />
-                    <div class="item-description">
-                        <span class="brand-name">Chanel</span>
-                        <p class="product-name">Chanel 23C Camellia Quilted Denim Heart Crush Small Classic Flap</p>
-                        <div class="prices">
-                            <span class="price">USD 500</span>
-                            <span class="sale-price">USD 210</span>
+
+                <?php while($row = mysqli_fetch_assoc($result2)) { ?>
+                        <div class="product-container">
+                            <a href="product-view.php?query=SELECT * FROM products WHERE Product_Name = '<?php echo $row['Product_Name']; ?>'">
+                            <img src="<?php echo $row["Thumbnail"]; ?>" alt="Product Image"/>
+                            <div class="item-description">
+                                <span class="brand-name"><?php echo $row["Brand_Name"]; ?></span>
+                                <p class="product-name"><?php echo $row["Product_Name"]; ?></p>
+                                <div class="prices">
+                                    <span class="price"><?php echo $row["Price"]; ?></span>
+                                    <span class="sale-price"><?php echo $row["Sale_Price"]; ?></span>
+                                </div>
+                            </div>
+                            </a>
                         </div>
-                    </div>
-                </div>
-                <div class="product-container">
-                    <img src="https://cdn11.bigcommerce.com/s-u1vaaqdywl/images/stencil/320w/products/21654/22156/wsxc1678985496200_0__45508.1678975570.jpg?c=1"
-                        alt="Product Image" />
-                    <div class="item-description">
-                        <span class="brand-name">Chanel</span>
-                        <p class="product-name">Chanel 23C Camellia Quilted Denim Heart Crush Small Classic Flap</p>
-                        <div class="prices">
-                            <span class="price">USD 500</span>
-                            <span class="sale-price">USD 210</span>
-                        </div>
-                    </div>
-                </div>
+                <?php } ?>
+
 
             </div>
 
