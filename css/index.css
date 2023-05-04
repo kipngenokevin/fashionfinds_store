@@ -541,6 +541,27 @@ footer a {
     cursor: pointer;
 }
 
+form.customer-details-form {
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+}
+
+.checkout-details-section {
+    display: flex;
+}
+
+.container-checkout {
+    width: 80%;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.half-container {
+    width: 50%;
+}
+
 
 
 
@@ -580,6 +601,10 @@ footer a {
         /*featured products */
         .product-container {
             width: 200px;
+        }
+        .checkout-details-section{
+            display: flex;
+            flex-direction: column-reverse;
         }
     /*========== EEND OF HOMEPAGE SECTION =====*/
          footer {

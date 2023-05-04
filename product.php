@@ -47,6 +47,10 @@ if (isset($_SESSION["cart"])) {
 </head>
 <body>
 
+    <div class="top-banner">
+        <p>"We do not just deliver a product, We deliver an experience!" </p>
+    </div>
+
     <header>
         
         <div class="logo">

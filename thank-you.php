@@ -1,45 +1,46 @@
 <?php 
-    // Check if the form has been submitted
-   // Start the session
+// Check if the form has been submitted
+// Start the session
 require_once('database/db.php');
 
 include('database/queries.php');
- 
-    session_start();
 
-    if (!isset($_SESSION["cart"])) {
-        // If the cart doesn't exist, create an empty array
-        $_SESSION["cart"] = array();
+session_start();
+
+if (!isset($_SESSION["cart"])) {
+    // If the cart doesn't exist, create an empty array
+    $_SESSION["cart"] = array();
+}
+
+if (isset($_SESSION["cart"])) {
+    // Get the number of items in the cart
+    $num_items = count($_SESSION["cart"]);
+    // Calculate the total price of all items in the cart
+    $total_price = calculate_total_price($_SESSION["cart"]);
+} else {
+    $num_items = 0;
+    $total_price = 0;
+}
+
+function calculate_total_price($cart_items) {
+    $total_price = 0;
+    foreach ($cart_items as $item) {
+        $total_price += $item["price"];
     }
-    
-    if (isset($_SESSION["cart"])) {
-        // Get the number of items in the cart
-        $num_items = count($_SESSION["cart"]);
-        // Calculate the total price of all items in the cart
-        $total_price = calculate_total_price($_SESSION["cart"]);
-    } else {
-        $num_items = 0;
-        $total_price = 0;
-    }
-    
-    function calculate_total_price($cart_items) {
-        $total_price = 0;
-        foreach ($cart_items as $item) {
-            $total_price += $item["price"];
-        }
-        return $total_price;
-    }
-    
-    
-     //Get the session variable as an array
-  
+    return $total_price;
+}
+
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/bootstrap-reboot.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     
     <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
@@ -68,7 +69,6 @@ include('database/queries.php');
         </div>
         <nav class="nav">
         <span class="nav-link"> <a href="index.php">HOME</a></span>
-
 
             <div class="dropdown">
             <span class="nav-link">BAGS <i class="material-icons">&#xe313;</i></span>
@@ -1401,7 +1401,7 @@ include('database/queries.php');
                             <?php } ?>
                         </div>
 
-                        
+                      
 
                         <div class="nav-drop">
                             <span class="brand_name">Roger Dubois</span>
@@ -1817,76 +1817,24 @@ include('database/queries.php');
 
             </div>
         </nav>
-   </header>
+    </header>
 
-    <section class="cart-products">
+    <section>
         <div class="container">
             <div class="row">
-                <div class="col-sm-12">
-                    <div class="cart-table">
-                        <table class="cart-table-table" id="carttable">
-                            <tr>
-                                <th>Item</th>
-                                <th>Name</th>
-                                <th>Quantity</th>
-                                <th>Price</th>
-                                <th>Remove</th>
-                            </tr>
-                            <?php foreach ($_SESSION["cart"] as $item): ?>
-                            <tr>
-                                <td class="table-data"><img class="table-image"  src="<?php echo $item["image"]; ?>" alt=""></td>
-                                <td class="table-data"><?php echo $item["name"]; ?></td>
-                                <td class="table-data"><?php echo $item["quantity"]; ?></td>
-                                <td class="table-data"><?php echo $item["price"]; ?></td>
 
-                                <!-- Example usage in HTML -->
-                                <td>
-                                <form method="post" action="remove-from-cart.php">
-                                    <input type="hidden" name="remove_index" value="0">
-                                    <button  class="checkout-section-button" type="submit">Remove from cart</button>
-                                </form>
-                                </td>
-                            </tr>
-                            <?php endforeach; ?>
-                        </table>
-                        
-                        <br>
-                        <hr>
-                    </div>
+                <div class="col-sm-12" style="text-align:center; height: 60vh;">
+
+                        <h2>Your Order Has been submitted successfully!</h2>
+                        <p>We'll contact you soon.</p>
 
                 </div>
 
             </div>
-    
         </div>
     </section>
 
-  
-
-      <div class="container">
-            <div class="row">
-                <div class="checkout-table">
-                    <div class="checkout-section">
-                        <table class="cart-table-table" id="carttable">
-                            <tr>
-                                <td>Subtotal</td>
-                                <td><?php echo $total_price; ?></td>
-                            </tr>
-                            <tr>
-                                <td>Grand Total</td>
-                                <td><?php echo $total_price; ?></td>
-                            </tr>
-                        </table>
-                       <a href="checkout.php"> <button class="checkout-section-button">Checkout</button></a>
-                        
-
-                    </div>
-
-                </div>
-
-            </div>
-
-      </div>
+    
 
     <footer>
         <div class="navigate">
@@ -1936,5 +1884,6 @@ include('database/queries.php');
     </footer>
 
 
+    
 </body>
 </html>
