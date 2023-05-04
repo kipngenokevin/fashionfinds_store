@@ -1,6 +1,6 @@
 <?php 
        
-       
+       ob_start();
 
   
     // Check if the form has been submitted
@@ -56,7 +56,7 @@
         } 
     }
 
-  
+  ob_end_flush();
 
   
 ?>

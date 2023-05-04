@@ -3,10 +3,24 @@
 require_once('database/db.php');
 include('database/queries.php');
 $query = $_GET['query'];
-echo $query;
+//echo $query;
 $result = $mysqli->query($query);
 
 // Execute the SQL query against your database
+
+session_start();
+
+if (!isset($_SESSION["cart"])) {
+    // If the cart doesn't exist, create an empty array
+    $_SESSION["cart"] = array();
+}
+
+if (isset($_SESSION["cart"])) {
+    // Get the number of items in the cart
+    $num_items = count($_SESSION["cart"]);
+} else {
+    $num_items = 0;
+}
 // ...
 ?>
 <!DOCTYPE html>
@@ -40,7 +54,7 @@ $result = $mysqli->query($query);
 
         </div>
         <nav class="nav">
-            <span class="nav-link"><a href=".">HOME</a></span>
+        <span class="nav-link"> <a href="index.php">HOME</a></span>
 
 
             <div class="dropdown">
@@ -1795,12 +1809,12 @@ $result = $mysqli->query($query);
             <div class="body-section">
 
                 <!-- FEATURED PRODUCTS SECTION -->
-                <h2>Brand Name</h2>
+                <h2></h2>
                 <div class="featured-products">
                 <?php while($row = mysqli_fetch_assoc($result)) { ?>
                     <div class="product-container">
-                        <a href="product-view.php?query=SELECT * FROM products WHERE Product_Name = '<?php echo $row['Product_Name']; ?>'">
-                        <img src="<?php echo $row["Thumbnail"]; ?>" alt="Product Image"/>
+                    <a href="product-view.php?query=<?php echo urlencode("SELECT * FROM products WHERE Product_Name = '" . $row['Product_Name'] . "'"); ?>">
+                        <img src="<?php echo $row["Thumbnail"]; ?>" alt="Product Image" loading="lazy"/>
                         <div class="item-description">
                             <span class="brand-name"><?php echo $row["Brand_Name"]; ?></span>
                             <p class="product-name"><?php echo $row["Product_Name"]; ?></p>

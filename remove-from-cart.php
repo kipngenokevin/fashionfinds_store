@@ -1,4 +1,7 @@
 <?php
+
+ob_start();
+
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -26,4 +29,6 @@ function removeFromCart($index) {
     // Reset the keys of the cart array
     $_SESSION["cart"] = array_values($_SESSION["cart"]);
 }
+
+ob_end_flush();
 ?>

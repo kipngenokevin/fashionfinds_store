@@ -3,6 +3,7 @@
 require_once('database/db.php');
 
 include('database/queries.php');
+
 session_start();
 
 if (!isset($_SESSION["cart"])) {
@@ -55,8 +56,7 @@ if (isset($_SESSION["cart"])) {
 
         </div>
         <nav class="nav">
-            <span class="nav-link">HOME</span>
-
+        <span class="nav-link"> <a href="index.php">HOME</a></span>
 
             <div class="dropdown">
             <span class="nav-link">BAGS <i class="material-icons">&#xe313;</i></span>
@@ -1854,8 +1854,9 @@ if (isset($_SESSION["cart"])) {
 
                 <?php while($row = mysqli_fetch_assoc($result)) { ?>
                         <div class="product-container">
-                            <a href="product-view.php?query=SELECT * FROM products WHERE Product_Name = '<?php echo $row['Product_Name']; ?>'">
-                            <img src="<?php echo $row["Thumbnail"]; ?>" alt="Product Image"/>
+                            
+                            <a href="product-view.php?query=<?php echo urlencode("SELECT * FROM products WHERE Product_Name = '" . $row['Product_Name'] . "'"); ?>">
+                            <img src="<?php echo $row["Thumbnail"]; ?>" alt="Product Image" loading="lazy"/>
                             <div class="item-description">
                                 <span class="brand-name"><?php echo $row["Brand_Name"]; ?></span>
                                 <p class="product-name"><?php echo $row["Product_Name"]; ?></p>
@@ -1876,8 +1877,8 @@ if (isset($_SESSION["cart"])) {
 
                 <?php while($row = mysqli_fetch_assoc($result1)) { ?>
                         <div class="product-container">
-                            <a href="product-view.php?query=SELECT * FROM products WHERE Product_Name = '<?php echo $row['Product_Name']; ?>'">
-                            <img src="<?php echo $row["Thumbnail"]; ?>" alt="Product Image"/>
+                        <a href="product-view.php?query=<?php echo urlencode("SELECT * FROM products WHERE Product_Name = '" . $row['Product_Name'] . "'"); ?>">
+                            <img src="<?php echo $row["Thumbnail"]; ?>" alt="Product Image" loading="lazy"/>
                             <div class="item-description">
                                 <span class="brand-name"><?php echo $row["Brand_Name"]; ?></span>
                                 <p class="product-name"><?php echo $row["Product_Name"]; ?></p>
@@ -1898,8 +1899,8 @@ if (isset($_SESSION["cart"])) {
 
                 <?php while($row = mysqli_fetch_assoc($result2)) { ?>
                         <div class="product-container">
-                            <a href="product-view.php?query=SELECT * FROM products WHERE Product_Name = '<?php echo $row['Product_Name']; ?>'">
-                            <img src="<?php echo $row["Thumbnail"]; ?>" alt="Product Image"/>
+                        <a href="product-view.php?query=<?php echo urlencode("SELECT * FROM products WHERE Product_Name = '" . $row['Product_Name'] . "'"); ?>">
+                            <img src="<?php echo $row["Thumbnail"]; ?>" alt="Product Image" loading="lazy"/>
                             <div class="item-description">
                                 <span class="brand-name"><?php echo $row["Brand_Name"]; ?></span>
                                 <p class="product-name"><?php echo $row["Product_Name"]; ?></p>

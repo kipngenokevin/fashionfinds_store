@@ -150,12 +150,14 @@ $querywatch40 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_N
 $querywatch41 = 'SELECT DISTINCT Grandchild_Category FROM products WHERE Brand_Name = "Armani" AND Root_Category="Watches"';
 
 
-$randomquery = 'SELECT * FROM products ORDER BY RAND() LIMIT 20';
+$randomquery = 'SELECT * FROM products ORDER BY RAND() LIMIT 10';
+$randomquery1 = 'SELECT * FROM products ORDER BY RAND() LIMIT 10';
+$randomquery2 = 'SELECT * FROM products ORDER BY RAND() LIMIT 10';
 
 
 $result = $mysqli->query($randomquery);
-$result1 = $mysqli->query($randomquery);
-$result2 = $mysqli->query($randomquery);
+$result1 = $mysqli->query($randomquery1);
+$result2 = $mysqli->query($randomquery2);
 
 
 
