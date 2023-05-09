@@ -562,6 +562,58 @@ form.customer-details-form {
     width: 50%;
 }
 
+.admin-section {
+    margin-top: 24px;
+    overflow: auto;
+}
+
+.admin-header {
+    padding: 20px;
+    background: white;
+    color: black;
+    box-shadow: 1px 4px #888888;
+}
+
+
+.admin-table {
+    border-collapse: collapse;
+    border: none;
+    width: 100%;
+}
+
+.admin-table td {
+    border: none;
+    border-collapse: collapse;
+    border-bottom: 1px solid black;
+    text-align: center; 
+    padding: 10px;
+}
+
+.admin-table th {
+    background: #888888 ;
+    height: 69px;
+    padding: 10px;
+    text-align: center;
+    color: white;
+}
+.admin-button {
+    border-radius: 5px;
+    color: white;
+    background: darkgray;
+    border: none;
+}
+.login-section {
+    /* display: flex; */
+    left: 0;
+    right: 0;
+    position: relative;
+    margin: auto;
+    text-align: center;
+}
+
+
+
+
 
 
 
